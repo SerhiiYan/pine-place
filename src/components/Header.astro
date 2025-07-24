@@ -1,0 +1,49 @@
+---
+// src/components/Header.astro
+---
+<header>
+  <div class="container header__container"> 
+    <a href="/" class="logo">
+      <img src="/images/logo-horizontal.svg" alt="Pine & Place Logo" width="150">
+    </a>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#booking">Бронирование</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 0;
+  }
+  
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white; 
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .logo img {
+    filter: brightness(0) invert(1);
+  }
+</style>

@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+// src/pages/index.astro
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// 1. ИМПОРТИРУЕМ ВСЕ КОМПОНЕНТЫ, КОТОРЫЕ ИСПОЛЬЗУЮТСЯ НА ЭТОЙ СТРАНИЦЕ
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro'; 
+import HeroSection from '../components/sections/HeroSection.astro';
+import AboutHouseSection from '../components/sections/AboutHouseSection.astro';
+import GallerySection from '../components/sections/GallerySection.astro';
+import PricingAndRulesSection from '../components/sections/PricingAndRulesSection.astro';
 ---
 
-<Layout>
-	<Welcome />
+<!-- 2. ИСПОЛЬЗУЕМ ИХ В HTML-ШАБЛОНЕ -->
+<Layout title="Pine & Place - Место твоей тишины">
+  <Header />
+  <main>
+    <HeroSection />
+    <AboutHouseSection />
+    <GallerySection />
+    <PricingAndRulesSection
+    <div id="details">
+      <!-- Здесь будет контент про домик, который мы сделаем дальше -->
+    </div>
+  </main>
 </Layout>

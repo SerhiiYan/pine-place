@@ -1,0 +1,53 @@
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
+/* 
+  ШАГ 1: "Золотой" CSS-сброс.
+  Это говорит браузеру, чтобы при расчете ширины элемента (width) он УЖЕ ВКЛЮЧАЛ в нее внутренние отступы (padding) и рамки (border).
+  Это предотвращает 99% проблем с макетом.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #2C3E3A;
+  --color-secondary: #A9A299;
+  --color-background: #F4F1ED;
+  --color-text: #1A1A1A;
+  --color-primary-light: #84998F;
+  --font-family-base: 'Manrope', sans-serif;
+}
+
+/* 
+  ШАГ 2: Главное исправление.
+  Мы применяем стили к ОБОИМ тегам, html и body, и жестко запрещаем горизонтальный скролл.
+*/
+html {
+  /* Железно запрещаем горизонтальную прокрутку, которая может появиться из-за разных мелочей */
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+  ШАГ 3: Контейнер остается без изменений, он у нас уже глобальный и правильный.
+*/
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}

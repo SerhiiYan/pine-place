@@ -1,0 +1,143 @@
+---
+// Вся логика снова в верстке и стилях
+---
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-header">
+      <h2>Стоимость и условия</h2>
+      <p>Прозрачные цены и понятные правила для вашего идеального отдыха.</p>
+    </div>
+
+    <div class="pricing-grid">
+      
+      <!-- Колонка 1: Основные цены -->
+      <div class="pricing-card">
+        <h3>Основные цены</h3>
+        <ul>
+          <li><span>Воскресенье – Четверг</span> <strong>300 BYN/ночь</strong></li>
+          <li><span>Пятница</span> <strong>350 BYN/ночь</strong></li>
+          <li><span>Суббота</span> <strong>400 BYN/ночь</strong></li>
+          <li><span>Дополнительный гость</span> <strong>+50 BYN</strong></li>
+          <li><span>Праздничные дни</span> <strong>+20%</strong></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 2: Дети и питомцы -->
+      <div class="pricing-card">
+        <h3>Дети</h3>
+        <ul>
+          <li><span>Горячая купель</span> <strong>150 BYN</strong></li>
+          <li><span>Дети до 6 лет</span> <strong>Бесплатно</strong></li>
+          <li><span>Двое детей до 6 лет</span> <strong>+50 BYN</strong></li>
+          <li><span>Дети 6-16 лет</span> <strong>+30 BYN</strong></li>
+          <li><span>Питомцы</span> <strong>Разрешены*</strong></li>
+        </ul>
+        <p class="card-footnote">*Возможен залог 50 BYN</p>
+      </div>
+
+      <!-- Колонка 3: Условия бронирования -->
+      <div class="pricing-card">
+        <h3>Бронирование</h3>
+        <ul>
+          <li><span>Время заезда / выезда</span> <strong>15:00 / 12:00</strong></li>
+          <li><span>Предоплата</span> <strong>50% при бронировании</strong></li>
+          <li><span>Остаток</span> <strong>50% в день заезда</strong></li>
+          <li><span>Полный возврат отмены</span> <strong>за 7+ дней</strong></li>
+          <li><span>Без возврата отмены</span> <strong>менее чем за 7 дней</strong></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-section {
+    padding: 80px 0 120px 0;
+    background-color: var(--color-background);
+  }
+
+  .pricing-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+  }
+  
+  .pricing-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+  }
+  .pricing-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Создаем сетку из 3 колонок */
+    gap: 30px;
+  }
+
+  .pricing-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column; /* Выравниваем сноску внизу */
+  }
+
+  .pricing-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 0 0 25px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-primary-light);
+  }
+  
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pricing-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .pricing-card li:last-child {
+    border-bottom: none;
+  }
+  
+  .pricing-card li span {
+    color: #555; /* Текст слева чуть приглушаем */
+  }
+  .pricing-card li strong {
+    font-size: 1.1em;
+    color: var(--color-text);
+  }
+  
+  .card-footnote {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: auto; /* Прижимаем сноску к низу карточки */
+    padding-top: 20px;
+  }
+
+  /*
+    --- АДАПТИВНОСТЬ ---
+  */
+  @media (max-width: 992px) {
+    /* На планшетах и мобильных ставим все в одну колонку */
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+</style>

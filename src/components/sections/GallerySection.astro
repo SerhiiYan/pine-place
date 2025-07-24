@@ -1,0 +1,144 @@
+---
+// Вся логика - в HTML и CSS, "мозг" компонента пока пуст.
+---
+<section class="gallery-section">
+  <div class="container">
+    <div class="gallery-header">
+      <h2>Моменты тишины</h2>
+      <p>Посмотрите, какая атмосфера ждет вас в Pine & Place. Каждый уголок дома создан для вашего комфорта и вдохновения.</p>
+    </div>
+
+    <!-- Наша Masonry-сетка -->
+    <div class="masonry-grid">
+      <!-- Каждому изображению мы даем свой класс, чтобы управлять его размером в сетке -->
+      <div class="card card-1">
+        <img src="images/gallery/2.jpg" alt="Вид на террасу домика">
+      </div>
+      <div class="card card-2">
+        <img src="images/gallery/14.jpg" alt="Деталь интерьера гостиной">
+      </div>
+      <div class="card card-3">
+        <img src="images/gallery/15.jpg" alt="Спальня с панорамным окном">
+      </div>
+      <div class="card card-4">
+        <img src="images/gallery/9.jpg" alt="Кухонная зона">
+      </div>
+      <div class="card card-5">
+        <img src="images/gallery/5.jpg" alt="Экстерьер домика в лесу">
+      </div>
+      <div class="card card-6">
+        <img src="/images/gallery/11.jpg" alt="Уютный уголок для чтения">
+      </div>
+       <div class="card card-7">
+        <img src="images/gallery/7.jpg" alt="Ванная комната">
+      </div>
+      <div class="card card-8">
+        <img src="images/gallery/12.jpg" alt="Ванная комната">
+      </div>
+      <div class="card card-8">
+        <img src="images/gallery/13.jpg" alt="Ванная комната">
+      </div>
+      <div class="card card-8">
+        <img src="images/gallery/8.jpg" alt="Ванная комната">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery-section {
+    padding: 80px 0;
+    background-color: #fff; /* Сделаем фон белым для контраста */
+  }
+
+  .gallery-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto; /* Центрируем заголовок и задаем отступ снизу */
+  }
+
+  .gallery-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+  }
+  .gallery-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  /*
+    --- МАГИЯ MASONRY GRID ---
+  */
+  .masonry-grid {
+    display: grid;
+    /* Создаем сетку из 4 колонок с небольшими промежутками */
+    grid-template-columns: repeat(4, 1fr); 
+    grid-auto-rows: 250px; /* Задаем базовую высоту для автоматических рядов */
+    gap: 15px;
+  }
+  
+  .card {
+    overflow: hidden; /* Обрезаем все, что выходит за рамки */
+    border-radius: 12px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняем картинкой все пространство карточки без искажений */
+    transition: transform 0.4s ease-out; /* Плавный переход для зума */
+  }
+
+  .card img:hover {
+    transform: scale(1.05); /* Легкий зум при наведении */
+  }
+
+  /* 
+    --- УПРАВЛЯЕМ РАЗМЕРАМИ КАРТОЧЕК ---
+    Здесь мы говорим, какие карточки должны занимать больше места.
+  */
+  
+  /* Карточка 1 будет занимать 2 колонки и 2 ряда (большой квадрат) */
+  .card-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  /* Карточка 3 будет высокой (2 ряда в высоту) */
+  .card-3 {
+    grid-row: span 2;
+  }
+  /* Карточка 5 будет широкой (2 колонки в ширину) */
+  .card-5 {
+    grid-column: span 2;
+  }
+  /* Карточка 7 будет высокой */
+  .card-7 {
+    grid-row: span 2;
+  }
+
+  /* 
+    --- АДАПТИВНОСТЬ ---
+  */
+  @media (max-width: 992px) {
+    .masonry-grid {
+      grid-template-columns: repeat(2, 1fr); /* На планшетах делаем 2 колонки */
+      grid-auto-rows: 200px;
+    }
+    /* На 2 колонках нам не нужно столько кастомных размеров, можно упростить */
+    .card-1, .card-3, .card-5, .card-7 {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+    .card-1 { grid-row: span 2; }
+    .card-5 { grid-row: span 2; }
+  }
+
+  @media (max-width: 768px) {
+    .masonry-grid {
+      grid-auto-rows: 150px;
+    }
+  }
+
+</style>

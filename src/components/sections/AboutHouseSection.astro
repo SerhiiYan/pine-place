@@ -1,0 +1,155 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<section id="details" class="about-section">
+  <div class="container">
+      <div class="image-column">
+        <img src="/images/renders/aboutBarn.jpeg" alt="Интерьер домика в стиле Барнхаус" loading="lazy">
+      </div>
+
+    <div class="text-column">
+      <!-- 1. НОВЫЙ, БОЛЕЕ ЭМОЦИОНАЛЬНЫЙ ТЕКСТ -->
+      <h2>Ваш идеальный Барнхаус</h2>
+      <p>
+        Представьте: вы просыпаетесь от света, пробивающегося сквозь сосны, завариваете кофе и устраиваетесь с книгой у потрескивающего камина. Вечером — кино на большом экране, а после — звездное небо из горячей купели под открытым небом. Это не просто отдых. Это Pine & Place.
+      </p>
+      
+      <!-- 2. НОВЫЙ, БОЛЕЕ МОЩНЫЙ СПИСОК ПРЕИМУЩЕСТВ -->
+      <ul class="features-list">
+        <li>
+          <Icon name="mdi:fireplace" class="feature-icon" /> 
+          <span>Дровяная печь-камин</span>
+        </li>
+        <li>
+          <Icon name="mdi:hot-tub" class="feature-icon" />
+          <span>Купель под открытым небом</span>
+        </li>
+        <li>
+          <Icon name="mdi:hanger" class="feature-icon" />
+          <span>Сканди + Бохо интерьер</span>
+        </li>
+        <li>
+          <Icon name="mdi:campfire" class="feature-icon" />
+          <span>Кострище и гриль-зона</span>
+        </li>
+         <li>
+          <Icon name="mdi:projector" class="feature-icon" />
+          <span>Проектор для кинопросмотров</span>
+        </li>
+        <li>
+          <Icon name="mdi:camera" class="feature-icon" />
+          <span>Фотогеничные локации</span>
+        </li>
+      </ul>
+  </div>
+</section>
+
+<style>
+  /* --- НАЧАЛО ФИНАЛЬНОГО, ЧИСТОГО КОДА --- */
+  
+  .about-section {
+    padding: 120px 0;
+    background-color: var(--color-background);
+  }
+
+  /*
+    1. Наш основной, простой грид для десктопов
+  */
+  .about-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+  }
+  
+  /*
+    2. КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ: 
+    Правило, которое заставляет колонки встать друг под другом на планшетах и мобильных.
+    Именно его отсутствие или некорректная работа и вызывала все проблемы.
+  */
+  @media (max-width: 768px) {
+    .about-section .container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  /* Все остальные стили ниже остаются такими, какими они были в вашей рабочей версии,
+     потому что они были абсолютно правильными. */
+
+  .image-column img {
+    width: 100%;
+    display: block; /* Важный небольшой фикс для изображений */
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(44, 62, 58, 0.2);
+  }
+  
+  .text-column h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary); 
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .text-column h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary-light);
+    margin-top: 15px;
+  }
+  
+  .text-column p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  .features-list li {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .features-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(44, 62, 58, 0.1);
+  }
+    
+  .feature-icon {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+  }
+
+  /* 
+    3. ВАШЕ ПОСЛЕДНЕЕ ИЗМЕНЕНИЕ, которое мы сохраняем, потому что оно правильное.
+  */
+  @media (max-width: 450px) {
+    .features-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* --- КОНЕЦ ФИНАЛЬНОГО КОДА --- */
+</style>

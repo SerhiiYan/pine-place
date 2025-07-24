@@ -1,0 +1,42 @@
+---
+// Button.astro
+export interface Props {
+  href: string;
+  size?: 'normal' | 'large'; // Делаем 'size' необязательным
+}
+
+const { href, size = 'normal' } = Astro.props; // По умолчанию размер 'normal'
+---
+<a href={href} class:list={["button", { "button-large": size === 'large' }]}>
+  <slot />
+</a>
+
+<style>
+  /* Button.astro -> <style> */
+  .button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem; /* Стандартный размер шрифта */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .button:hover {
+    background-color: var(--color-primary-light);
+    transform: scale(1.05);
+  }
+
+  /* 
+    --- НОВОЕ ПРАВИЛО ---
+    Это правило сработает, только если кнопка является потомком элемента 
+    с классом .hero-section
+  */
+  :global(.hero-section) .button {
+    padding: 18px 36px;
+    font-size: 1.2rem;
+  }
+</style>
