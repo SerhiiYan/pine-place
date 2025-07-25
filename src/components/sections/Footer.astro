@@ -1,0 +1,168 @@
+---
+// src/components/Footer.astro
+import { Icon } from 'astro-icon/components';
+
+// Данные для футера, чтобы легко менять в одном месте
+const email = "pineandplace@gmail.com";
+const instagramUrl = "https://www.instagram.com/pine.and.place/";
+const currentYear = new Date().getFullYear();
+---
+
+<!-- 2. ОСНОВНОЙ ФУТЕР -->
+<footer id="contacts" class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      
+      <!-- Колонка 1: Лого и философия -->
+      <div class="footer-col brand-col">
+        <a href="/" class="footer-logo">
+          <img src="/images/logo-horizontal.svg" alt="Pine & Place Logo" width="180">
+        </a>
+        <p>Место, где современный комфорт встречается с первозданной природой для вашей идеальной перезагрузки.</p>
+      </div>
+      
+      <!-- Колонка 2: Навигация -->
+      <div class="footer-col">
+        <h5>Навигация</h5>
+        <ul>
+          <li><a href="/rent/barnhouse">Lumo</a></li>
+          <li><a href="/#about">О проекте</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 3: Контакты -->
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <ul>
+          <li><a href={`mailto:${email}`}>{email}</a></li>
+          <!-- <li><a href="tel:+375000000000">+375 (00) 000-00-00</a></li> -->
+        </ul>
+      </div>
+
+      <!-- Колонка 4: Соцсети -->
+      <div class="footer-col">
+        <h5>Следите за нами</h5>
+        <a href={instagramUrl} target="_blank" class="social-link">
+          <Icon name="mdi:instagram" />
+          <span>Pine & Place</span>
+        </a>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© {currentYear} Pine & Place. Все права защищены.</p>
+    </div>
+  </div>
+</footer>
+
+
+<style>
+/* --- Стили для секции с партнерами --- */
+.partners-section {
+  padding: 60px 0;
+  background-color: var(--color-background);
+  border-top: 1px solid #ddd;
+}
+.partners-section .container {
+  text-align: center;
+}
+.partners-section h4 {
+  font-size: 1rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 30px 0;
+}
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  filter: grayscale(100%) opacity(60%); /* Делаем логотипы Ч/Б и полупрозрачными */
+}
+.partners-logos img {
+  max-height: 140px; /* Ограничиваем высоту логотипов */
+}
+
+/* --- Стили для основного футера --- */
+.main-footer {
+  background-color: var(--color-primary); /* Наш фирменный зеленый */
+  color: white;
+  padding: 80px 0 30px 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr; /* Первая колонка шире */
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-col h5 {
+  font-size: 1.1rem;
+  margin: 0 0 20px 0;
+  opacity: 0.7;
+}
+.footer-col ul {
+  list-style: none; padding: 0; margin: 0;
+}
+.footer-col ul li {
+  margin-bottom: 15px;
+}
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+.footer-col a:hover {
+  opacity: 0.8;
+}
+
+.brand-col .footer-logo {
+  display: block;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+.brand-col p {
+  line-height: 1.7;
+  opacity: 0.8;
+  padding-right: 30px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+.social-link:deep(svg) { /* Стилизуем иконку внутри компонента */
+  font-size: 1.5em;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность для футера */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* На планшетах 2 колонки */
+  }
+}
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* На мобильных 1 колонка */
+    text-align: center;
+  }
+  .brand-col p {
+    padding-right: 0;
+  }
+  .social-link, .brand-col .footer-logo {
+    justify-content: center;
+  }
+}
+</style>

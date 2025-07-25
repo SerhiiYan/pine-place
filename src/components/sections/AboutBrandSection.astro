@@ -1,0 +1,154 @@
+---
+// src/components/sections/AboutBrandSection.astro
+import { Icon } from 'astro-icon/components'; // Импортируем иконки, они нам понадобятся
+---
+<section id="about" class="about-brand-section">
+  <div class="container main-grid">
+
+    <!-- 1. "Вступление" - теперь здесь ваш новый текст-пролог -->
+    <div class="text-intro">
+      <h2 class="intro-title">Наша философия</h2>
+      <p>
+        <strong>Мир стал слишком громким.</strong> В потоке дел, уведомлений и бесконечной спешки мы часто теряем связь с самым главным — с собой.
+      </p>
+      <div class="arrow-hint">
+        <span>Наведите, чтобы узнать больше</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+    </div>
+
+    <!-- 2. "Главный акт" - интерактивная карточка -->
+    <div class="interactive-card">
+      <div class="overlay">
+        <div class="image-content">
+          <div class="overlay-content">
+            <h2 class="section-title">Место<br/>твоей<br/>тишины</h2>
+            <div class="dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 3. "Глубина" - здесь теперь ваши 4 принципа в виде списка -->
+      <div class="text-content">
+        <h4>Наши четыре принципа:</h4>
+        <ul class="principles-list">
+          <li>
+            <Icon name="mdi:pine-tree" class="principle-icon"/>
+            <div>
+              <h5>Природа в главной роли</h5>
+              <p>Мы не строили "на" природе, мы строили "вместе" с ней. Панорамные окна стирают границу между уютом дома и спокойствием соснового леса.</p>
+            </div>
+          </li>
+          <li>
+            <Icon name="mdi:palette-outline" class="principle-icon"/>
+            <div>
+              <h5>Дизайн, который успокаивает</h5>
+              <p>Мы убрали все лишнее, чтобы освободить место для ваших мыслей. Только натуральные материалы и продуманный минимализм.</p>
+            </div>
+          </li>
+          <li>
+            <Icon name="mdi:star-outline" class="principle-icon"/>
+            <div>
+              <h5>Роскошь в простом</h5>
+              <p>Мы верим, что настоящая роскошь сегодня — это возможность выспаться, почитать книгу у камина или просто смотреть на звезды.</p>
+            </div>
+          </li>
+          <li>
+            <Icon name="mdi:heart-outline" class="principle-icon"/>
+            <div>
+              <h5>Рождено из мечты</h5>
+              <p>Мы создали Pine & Place для себя — как место силы и перезагрузки. А теперь с радостью делимся им с вами.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 
+  Мы добавляем несколько новых стилей для списка принципов.
+  Остальные стили остаются без изменений.
+-->
+<style>
+  .about-brand-section { padding: 120px 0; background-color: var(--color-background); }
+  .main-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
+  .text-intro { padding-right: 20px; }
+  .intro-title { font-size: 2.5rem; color: var(--color-primary); line-height: 1.2; margin-bottom: 20px; }
+  .intro-title::after { content: ''; display: block; width: 50px; height: 3px; background-color: var(--color-primary-light); margin-top: 15px; }
+  .text-intro p { font-size: 1.1rem; line-height: 1.7; color: var(--color-text); }
+  .arrow-hint { display: flex; align-items: center; gap: 10px; margin-top: 30px; color: #888; font-style: italic; }
+  
+  .interactive-card { display: flex; width: 100%; height: 550px; border: 10px solid #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.2); position: relative; overflow: hidden; }
+  .overlay { width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); z-index: 2; }
+  .image-content { position: relative; width: 100%; height: 100%; background-image: url('/images/renders/aboutBrandSection.webp'); background-size: cover; background-position: center; display: flex; align-items: center; }
+  .overlay-content { background: rgba(44, 62, 58, 0.5); backdrop-filter: blur(8px); color: white; padding: 40px; width: 300px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+  .section-title { font-size: 3rem; line-height: 1.2; }
+  .dots { display: flex; gap: 10px; }
+  .dot { width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+  
+  .text-content { position: absolute; top: 0; right: 0; width: 60%; height: 100%; padding: 40px; background: #fff; z-index: 1; overflow-y: auto; }
+  /* Мы убираем стили для p, так как будем стилизовать список */
+  .text-content strong { color: var(--color-primary); }
+
+  .interactive-card:hover .overlay { transform: translateX(-60%); }
+  .interactive-card:hover .overlay-content { transform: translateX(-150%); }
+
+  /*
+    --- НОВЫЕ СТИЛИ ДЛЯ ВНУТРЕННЕГО ТЕКСТА ---
+  */
+  .text-content h4 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 0 0 30px 0;
+  }
+  .principles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .principles-list li {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .principle-icon {
+    font-size: 1.8rem;
+    color: var(--color-primary-light);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .principles-list h5 {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    color: var(--color-text);
+  }
+  .principles-list p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+  }
+  
+  @media (max-width: 992px) {
+    .main-grid { grid-template-columns: 1fr; gap: 40px; }
+    .text-intro { text-align: center; padding-right: 0; }
+    .intro-title::after { margin-left: auto; margin-right: auto; }
+    .arrow-hint { justify-content: center; }
+  }
+  @media (max-width: 768px) {
+    .interactive-card { flex-direction: column; height: auto; }
+    .overlay, .text-content { position: static; width: 100%; }
+    .overlay-content { width: 100%; justify-content: center; text-align: center; }
+    .text-content { padding: 40px; }
+    .interactive-card:hover .overlay,
+    .interactive-card:hover .overlay-content { transform: none; }
+    .dots { display: none; }
+  }
+</style>

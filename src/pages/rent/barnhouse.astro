@@ -1,0 +1,23 @@
+---
+// src/pages/rent/barnhouse.astro
+
+// 1. ИМПОРТИРУЕМ ВСЕ НЕОБХОДИМОЕ
+// Обратите внимание, что пути теперь `../../` потому что мы находимся глубже в структуре папок
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro'; 
+import AboutHouseSection from '../../components/sections/AboutHouseSection.astro';
+import GallerySection from '../../components/sections/GallerySection.astro';
+import PricingAndRulesSection from '../../components/sections/PricingAndRulesSection.astro';
+---
+
+<!-- 2. СОЗДАЕМ СТРУКТУРУ СТРАНИЦЫ -->
+<Layout title="Барнхаус - Pine & Place">
+  <Header />
+  <main >
+    <!-- 3. ВСТАВЛЯЕМ ВСЕ НАШИ ГОТОВЫЕ КОМПОНЕНТЫ СЮДА -->
+    <AboutHouseSection />
+    <GallerySection />
+    <PricingAndRulesSection />
+    <!-- В будущем здесь будет и форма бронирования -->
+  </main>
+</Layout>

@@ -1,0 +1,161 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<section id="construction" class="build-section">
+  <div class="section-bg">
+    <img src="/images/renders/invidual.webp" alt="Строительство стильного современного дома">
+  </div>
+  <div class="section-overlay"></div>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <!-- АНИМАЦИЯ: Добавляем класс и задержку -->
+      <h2 class="fade-in-on-scroll" style="--animation-delay: 0s;">Это может быть ваш дом</h2>
+      <p class="fade-in-on-scroll" style="--animation-delay: 0.2s;">
+        Каждый наш дом для аренды — это живой шоу-рум нашего подхода к качеству...
+      </p>
+
+      <ul class="services-list">
+        <!-- АНИМАЦИЯ: Добавляем класс и разную задержку для каждой карточки -->
+        <li class="fade-in-on-scroll" style="--animation-delay: 0.4s;">
+          <Icon name="mdi:pencil-ruler" class="service-icon" />
+          <span>Индивидуальный проект</span>
+        </li>
+        <li class="fade-in-on-scroll" style="--animation-delay: 0.6s;">
+          <Icon name="mdi:map-marker-radius-outline" class="service-icon" />
+          <span>Помощь с подбором участка</span>
+        </li>
+        <li class="fade-in-on-scroll" style="--animation-delay: 0.8s;">
+          <Icon name="mdi:tools" class="service-icon" />
+          <span>Строительство "под ключ"</span>
+        </li>
+      </ul>
+      
+      <a href="https://marmolhouse.by/" target="_blank" class="cta-button fade-in-on-scroll" style="--animation-delay: 1s;">
+        Узнать больше на Marmol House
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .build-section {
+    position: relative; padding: 120px 0; color: white; overflow: hidden;
+  }
+  .section-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+  }
+  .section-bg img {
+    width: 100%; height: 100%; object-fit: cover;
+    /* --- ВОЗВРАЩАЕМ АНИМАЦИЮ ФОНА --- */
+    animation: ken-burns 20s ease-in-out infinite;
+  }
+
+  /* --- АНИМАЦИЯ МЕДЛЕННОГО ЗУМА ДЛЯ ФОНА --- */
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .section-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--color-primary); opacity: 0.9; z-index: 2;
+  }
+  .build-section .container {
+    position: relative; z-index: 3; text-align: center;
+  }
+  .content-wrapper { max-width: 750px; margin: 0 auto; }
+  .content-wrapper h2 { font-size: 2.8rem; margin: 0 0 20px 0; line-height: 1.2; }
+  .content-wrapper p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 40px; opacity: 0.9; }
+  .services-list {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; list-style: none; padding: 0; margin: 0 0 50px 0;
+  }
+  
+  .services-list li {
+    position: relative;
+    display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    border-bottom: 2px solid transparent;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .services-list li:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .services-list li .service-icon {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+  }
+  .services-list li:hover .service-icon {
+    transform: scale(1.1);
+  }
+
+  .services-list li::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent-warm, #B87333);
+    transition: width 0.4s ease-out;
+  }
+  .services-list li:hover::after {
+    width: 50%;
+  }
+
+  .cta-button {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    color: var(--color-primary);
+    font-size: 1rem; font-weight: bold; text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.4s ease, height 0.4s ease;
+  }
+
+  .cta-button:hover::before {
+    width: 250%;
+    height: 500%;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 768px) {
+    .services-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

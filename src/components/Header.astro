@@ -1,49 +1,97 @@
 ---
 // src/components/Header.astro
 ---
-<header>
+<header id="main-header">
   <div class="container header__container"> 
     <a href="/" class="logo">
       <img src="/images/logo-horizontal.svg" alt="Pine & Place Logo" width="150">
     </a>
-    <nav>
-      <a href="#about">О нас</a>
+    <nav class="desktop-nav">
+      <!-- Ваша идеальная навигация -->
+      <div class="nav-item">
+        <span class="dropdown-trigger">Наши домики</span>
+        <ul class="dropdown-menu">
+          <li><a href="/rent/barnhouse">Lumo</a></li>
+        </ul>
+      </div>
+      <a href="/#about">О проекте</a>
       <a href="#contacts">Контакты</a>
-      <a href="#booking">Бронирование</a>
     </nav>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="mobile-nav">
+    <a href="/rent/barnhouse">Lumo</a>
+    <a href="/#about">О проекте</a>
+    <a href="#contacts">Контакты</a>
   </div>
 </header>
 
 <style>
+  /*
+    --- ГЛАВНЫЕ ИЗМЕНЕНИЯ ЗДЕСЬ ---
+  */
   header {
-    position: absolute;
+    /* 1. Позиционирование 'fixed' - хедер всегда прилипает к верху экрана */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
-    padding: 20px 0;
-  }
-  
-  .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    z-index: 1000;
+    padding: 15px 0; /* Сделаем его чуть компактнее */
+
+    /* 2. ЗАДАЕМ ФОН - НАШ ФИРМЕННЫЙ ЗЕЛЕНЫЙ */
+    background-color: var(--color-primary); 
+    
+    /* 3. Добавляем тень для объема */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
   }
 
-  nav {
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: white; 
-    font-size: 16px;
-    font-weight: bold;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  }
+  /* 
+    Мы сделали хедер непрозрачным, поэтому теперь нужно добавить верхний отступ 
+    для основного контента страницы, чтобы он не прятался под хедером.
+    Это делается в глобальных стилях.
+  */
 
-  .logo img {
-    filter: brightness(0) invert(1);
+  /* Все остальные стили остаются почти без изменений */
+  .header__container { display: flex; justify-content: space-between; align-items: center; }
+  .desktop-nav { display: flex; align-items: center; gap: 30px; }
+  .desktop-nav a, .dropdown-trigger { text-decoration: none; color: white; font-size: 16px; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.3); cursor: pointer; transition: color 0.2s ease; }
+  .desktop-nav a:hover, .dropdown-trigger:hover { color: #ccc; }
+  .nav-item { position: relative; }
+  .dropdown-menu { position: absolute; top: 100%; left: 0; margin-top: 15px; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); list-style: none; padding: 10px; margin-left: 0; width: 220px; opacity: 0; transform: translateY(10px); visibility: hidden; transition: all 0.3s ease; }
+  .nav-item:hover .dropdown-menu { opacity: 1; transform: translateY(0); visibility: visible; }
+  .dropdown-menu li a { display: block; padding: 10px 15px; color: var(--color-text); font-weight: bold; border-radius: 6px; transition: background-color 0.2s ease; }
+  .dropdown-menu li a:hover { background-color: var(--color-background); color: var(--color-primary); }
+  .logo img { filter: brightness(0) invert(1); }
+
+  /* Адаптивность */
+  .menu-toggle, .mobile-nav { display: none; }
+  @media (max-width: 768px) {
+    .desktop-nav { display: none; }
+    .menu-toggle { display: flex; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 11; }
+    .menu-toggle span { width: 30px; height: 3px; background: white; border-radius: 10px; transition: all 0.3s ease; }
+    .mobile-nav { position: fixed; top: 0; right: 0; width: 80%; max-width: 320px; height: 100vh; background-color: var(--color-primary); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; transform: translateX(100%); transition: transform 0.4s ease-in-out; }
+    .mobile-nav a { color: white; font-size: 1.5rem; text-decoration: none; }
+    header.is-open .mobile-nav { transform: translateX(0); }
+    header.is-open .menu-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    header.is-open .menu-toggle span:nth-child(2) { opacity: 0; }
+    header.is-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
   }
 </style>
+
+<!-- СКРИПТ ОСТАЕТСЯ ПРОСТЫМ - только для мобильного меню -->
+<script>
+  function initMobileMenu() {
+    const header = document.querySelector('#main-header');
+    const menuToggle = document.querySelector('#menu-toggle');
+    if (header && menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        header.classList.toggle('is-open');
+      });
+    }
+  }
+  document.addEventListener('astro:after-swap', initMobileMenu);
+  initMobileMenu();
+</script>
