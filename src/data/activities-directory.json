@@ -1,0 +1,9 @@
+{
+  "swimming": { "name": "Плавание", "icon": "mdi:swim" },
+  "fishing": { "name": "Рыбалка", "icon": "mdi:fish" },
+  "kayaking": { "name": "Каяки / Байдарки", "icon": "mdi:kayaking" },
+  "biking": { "name": "Велопрогулки", "icon": "mdi:bicycle" },
+  "horse-riding": { "name": "Прогулки на лошадях", "icon": "mdi:horse-human" },
+  "quad-biking": { "name": "Квадроциклы", "icon": "mdi:quad-bike" },
+  "wine-tasting": { "name": "Дегустация вина", "icon": "mdi:wine-bar" }
+}

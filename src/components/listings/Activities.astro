@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components';
+import activitiesDirectory from '@/data/activities-directory.json';
+
+const { activities } = Astro.props;
+if (!activities || !activities.list) return null;
+---
+
+<section class="activities-section">
+  <h2>{activities.title || 'Чем заняться'}</h2>
+  <div class="activities-grid">
+    {activities.list.map(key => {
+      const activity = activitiesDirectory[key];
+      if (!activity) return null;
+      return (
+        <div class="activity-item">
+          <Icon name={activity.icon} />
+          <span>{activity.name}</span>
+        </div>
+      )
+    })}
+  </div>
+  {activities.description && <p class="description">{activities.description}</p>}
+</section>
+
+<style>
+  .activities-section { margin-top: 2rem; }
+  .activities-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.5rem; }
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .activity-item { display: flex; align-items: center; gap: 0.75rem; }
+  .activity-item [astro-icon] { font-size: 1.5rem; }
+  .description { color: #6c757d; line-height: 1.6; }
+</style>

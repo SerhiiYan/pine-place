@@ -1,16 +1,91 @@
 ---
+import Layout from '@/layouts/Layout.astro';
+// Импортируем наши ДВА новых компонента
+import SearchBar from '@/components/listings/SearchBar.jsx';
+import ListingsGrid from '@/components/listings/ListingsGrid.jsx';
+import allListings from '@/data/listings.json';
 
+// Подготовим данные для передачи в SearchBar
+const uniqueRegions = ["Все", ...new Set(allListings.map(l => l.region))];
+const uniqueTypes = ["Все", ...new Set(allListings.map(l => l.type))];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Уникальный отдых в Беларуси: глэмпинги и коттеджи">
+  <main>
+    <!-- СЕКЦИЯ 1: Только Hero-блок с поиском -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Уникальный отдых в Беларуси: глэмпинги, коттеджи и домики на природе</h1>
+        <p class="hero-subtitle">Мы вручную отбираем самые красивые и уютные места по всей стране.</p>
+        
+        {/* Компонент №1 здесь, внутри ограниченного контейнера */}
+        <SearchBar regions={uniqueRegions} types={uniqueTypes} client:load />
+      </div>
+    </section>
+
+    <!-- СЕКЦИЯ 2: Отдельная секция для результатов. Она уже не внутри .hero-content! -->
+    <div class="listings-container">
+      {/* Компонент №2 здесь, в своей собственной обертке */}
+      <ListingsGrid allListings={allListings} client:visible />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Стили для Hero */
+  .hero { position: relative; padding: 6rem 2rem; background-image: url('/images/hero-background.webp'); background-size: cover; background-position: center; background-attachment: fixed; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.45); z-index: 1; }
+  .hero-content { position: relative; z-index: 2; width: 100%; max-width: 900px; }
+  .hero-title { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); }
+  .hero-subtitle { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem auto; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); }
+
+  .listings-container {
+    background-color: #fff;
+    padding-top: 80px; /* Отступ для "парящего" фильтра */
+  }
+
+  /* Стили для компонента SearchBar, которые мы добавим прямо сюда для удобства */
+  :global(.search-bar) {
+    display: flex; background-color: #fff; border-radius: 12px; padding: 0.75rem; gap: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,0.15); border: 1px solid #e0e0e0;
+    position: absolute; bottom: -45px; left: 50%; transform: translateX(-50%); width: calc(100% - 2rem); max-width: 800px; z-index: 10;
+  }
+  :global(.filter-group) { flex: 1; display: flex; flex-direction: column; text-align: left; padding: 0 0.5rem; }
+  :global(.filter-group:not(:last-child)) { border-right: 1px solid #eee; }
+  :global(.filter-group label) { font-size: 0.8rem; font-weight: 600; color: #6c757d; margin-bottom: 0.25rem; }
+  :global(.filter-group select) { padding: 0.25rem 0; border: none; outline: none; font-size: 1rem; font-weight: 500; color: #333; background-color: transparent; cursor: pointer; }
+
+  /* Стили для контейнера с результатами */
+  .listings-container {
+    background-color: #fff;
+    padding-top: 80px; /* Отступ для "парящего" фильтра */
+  }
+
+  /* Стили для компонента ListingsGrid */
+  :global(.results-section) { background-color: #fff; color: #333; padding: 2rem 0 4rem 0; }
+  :global(.results-header) { text-align: center; max-width: 1200px; margin: 0 auto 2.5rem auto; padding: 0 1.5rem; }
+  :global(.results-header h2) { font-size: 1.75rem; color: #333; margin-bottom: 0.5rem; }
+  :global(.results-header p) { color: #6c757d; max-width: 600px; margin: 0 auto; }
+  :global(.listings-grid) { width: 100%; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; padding: 0 1.5rem; box-sizing: border-box; }
+  :global(.no-results) { grid-column: 1 / -1; text-align: center; padding: 3rem; color: #333; }
+  :global(.load-more-container) {
+    text-align: center;
+    margin-top: 2.5rem; /* Отступ от сетки с карточками */
+  }
+  
+  :global(.load-more-button) {
+    background-color: #2C3E3A;
+    color: #fff;
+    border: 2px solid #2C3E3A;
+    border-radius: 8px;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  :global(.load-more-button:hover) {
+    background-color: #fff;
+    color: #2C3E3A;
+  }
+</style>

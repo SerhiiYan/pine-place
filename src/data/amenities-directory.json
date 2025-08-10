@@ -1,0 +1,16 @@
+{
+  "wifi":       { "name": "Wi-Fi / Интернет",  "category": "Основное",        "icon": "md:wifi" },
+  "parking":    { "name": "Парковка",          "category": "Основное",        "icon": "md:local-parking" },
+  "fireplace":  { "name": "Камин",             "category": "Уют",             "icon": "md:fireplace" },
+  "firezone":  { "name": "Кострище",          "category": "Уют",             "icon": "md:MdOutlineFireplace" },
+  "sauna":      { "name": "Баня / Сауна",      "category": "Отдых и СПА",     "icon": "md:hot-tub" },
+  "hottub":     { "name": "Горячая купель",    "category": "Отдых и СПА",     "icon": "md:pool" },
+  "grill":      { "name": "Гриль / Мангал",    "category": "Кухня и BBQ",     "icon": "md:outdoor-grill" },
+  "kitchen":    { "name": "Кухня",             "category": "Кухня и BBQ",     "icon": "md:kitchen" },
+  "terrace":    { "name": "Терраса / Патио",   "category": "На улице",        "icon": "md:deck" },
+  "lakeview":   { "name": "Вид на озеро",      "category": "На улице",        "icon": "md:waves" },
+  "tv":         { "name": "Телевизор",         "category": "Развлечения",     "icon": "md:tv" },
+  "projector":  { "name": "Проектор",          "category": "Развлечения",     "icon": "md:videocam" },
+  "fishing":    { "name": "Рыбалка",           "category": "Активности",      "icon": "md:phishing" },
+  "boat":       { "name": "Лодка",             "category": "Активности",      "icon": "md:sailing" }
+}

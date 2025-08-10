@@ -1,0 +1,56 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { listing } = Astro.props;
+
+// Создаем массив с характеристиками, чтобы было легко добавлять/удалять
+const features = [
+  { icon: 'mdi:account-group-outline', text: `${listing.sleeps} гостя` },
+  { icon: 'mdi:bed-king-outline', text: `${listing.bedrooms} спальня` },
+  { icon: 'mdi:shower', text: `${listing.bathrooms} ванная`}
+];
+---
+
+<div class="key-features">
+  {features.map((feature, index) => (
+    <>
+      {/* Отображаем саму фичу */}
+      <div class="feature-item">
+        <Icon name={feature.icon} />
+        <span>{feature.text}</span>
+      </div>
+      
+      {/* Отображаем точку-разделитель, если это не последний элемент */}
+      {index < features.length - 1 && (
+        <span class="separator">•</span>
+      )}
+    </>
+  ))}
+</div>
+
+<style>
+  .key-features {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Отступ между элементами */
+    margin-top: 1.5rem; /* Отступ сверху от галереи */
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .feature-item [astro-icon] {
+    font-size: 1.25rem;
+  }
+  
+  .separator {
+    color: #6c757d;
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
+  }
+</style>
