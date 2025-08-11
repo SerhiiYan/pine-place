@@ -3,7 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    // --- ВОТ ЭТА СТРОЧКА ВСЕ ИСПРАВИТ ---
+    "jsx": "react-jsx"
   },
   "exclude": ["node_modules", "dist"]
 }

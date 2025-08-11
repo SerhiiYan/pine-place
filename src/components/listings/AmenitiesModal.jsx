@@ -18,7 +18,6 @@ export default function AmenitiesModal({ allAmenities, directory, onClose }) {
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-btn" onClick={onClose}>&times;</button>
-        <h2>Все удобства</h2>
         <div className="amenities-list">
           {Object.entries(groupedAmenities).map(([category, amenities]) => (
             <div key={category} className="category-group">

@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import allListings from '@/data/listings.json';
-import ImageGallery from '@/components/listings/ImageGallery.astro';
+import ImageGallery from '@/components/listings/ImageGallery.jsx'; 
 import BookingWidget from '@/components/listings/BookingWidget.astro';
 import KeyFeatures from '@/components/listings/KeyFeatures.astro';
 import Amenities from '@/components/listings/Amenities.jsx'
@@ -31,7 +31,7 @@ const { listing } = Astro.props;
     </header>
 
     <!-- Вставляем наш компонент галереи -->
-    <ImageGallery images={listing.images} />
+    <ImageGallery images={listing.images} client:load />
     <KeyFeatures listing={listing} />
 
     <!-- 3. Создаем двухколоночную сетку для контента -->
@@ -101,12 +101,10 @@ const { listing } = Astro.props;
 
   /* --- Стили для "липкой" колонки --- */
   .sidebar {
-    /* Это заставит колонку "прилипнуть" при скролле */
     position: sticky;
-    top: 120px; /* Отступ от верха, чтобы не наезжать на хедер */
-    align-self: start; /* Важно для правильной работы sticky */
+    top: 120px;
+    align-self: start;
   }
-
   /* --- Стили для временных заглушек --- */
   .placeholder, .booking-widget-placeholder {
     border: 2px dashed #e0e0e0;
@@ -179,4 +177,35 @@ const { listing } = Astro.props;
   :global(.category-group h3) { font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;}
   :global(.category-group ul) { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   :global(.category-group li) { display: flex; align-items: center; gap: 0.75rem; }
+
+  @media (max-width: 800px) {
+    .page-container {
+      padding: 0 1rem;
+    }
+    .listing-header h1 {
+      font-size: 1.75rem;
+    }
+
+    /* 1. Отключаем грид и делаем обычный блочный поток */
+    .content-grid {
+      display: block;
+    }
+
+    /* 2. Отключаем "липкость" и добавляем отступ */
+    .sidebar {
+      position: static;
+      margin-top: 2rem;
+    }
+    
+    /* Уменьшаем шрифты для заголовков секций */
+    .main-content h2 {
+      font-size: 1.3rem;
+    }
+
+    /* (Опционально) Сетка удобств в одну колонку */
+    :global(.amenities-preview-grid) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
 </style>

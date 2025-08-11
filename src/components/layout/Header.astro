@@ -1,163 +1,151 @@
 ---
-// В этом компоненте пока нет логики, только HTML и CSS
+// Вся логика теперь будет в теге <script>
 ---
-
 <header class="site-header">
   <div class="container">
-    <!-- Левый блок: Логотип -->
     <a href="/" class="logo">
-      <!-- 1. Иконка -->
       <div class="logo-icon-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 154.04" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 154.04" aria-hidden="true">
           <path id="logo-pin" style="fill:#2c3e3a" d="M50.49.14C40.3.87 32.65 4.14 25.6 8.29c-2.97 1.75-6.78 4.84-9.16 7.31l-3.94 4.09C-1.2 33.91 2.05 56.94 9.29 77.14c9.45 26.4 32.42 51.28 48.38 74.84 1.58 2.33 2.78 3.05 4.75.24 4.6-6.6 9.03-12.54 13.76-19.14C94.81 107.06 121.17 75.27 113 41.57c-6.08-25.07-30.31-43.25-56.98-41.35Z" style="fill:#2c3e3a"/>
           <path id="logo-leaf" style="fill:#fff" transform="translate(4 0)" d="m52.52 52.6-11.62-11.47c-2.99-3.16-5.53-.2-1.59 3.42l4.44 4.33c2.02 2 1.8 1.41 4.39 4.38 1.04 1.19 2.92 3.47 4.29 4.34l.05 16.07c-1.68-.95-5.78-5.75-8.43-8.26-4.59-4.33-6.52-7.86-9.57-6.21-.29 2.18.04 2.56 1.19 3.61l15.43 14.92c1.92 2.35 1.38 2.97 1.39 7.47l.05 10.37c-2.05-1.04-2.85-3.13-5.05-5.09-2.81-2.5-6.7-7.35-10.09-10.37-1.88-1.68-2.73-4.8-5.84-3-.38 2.38.81 2.56 2.02 3.87 1.04 1.12 1.86 2.35 2.89 3.35l11.86 12.63c4.1 4.61 4.18.4 4.16 12.01-.01 1.69-.47 6.02.64 7 3.69 3.22 3.01-5.18 3.01-8.09l0-5.85c0-2.43.73-2.25 2.19-3.58 1.15-1.05 1.69-1.97 2.78-3.06l11.81-11.58c2.52-2.45 5.24-4.82 4.34-7-2.46-1-4.31 1.99-5.66 3.48-2.1 2.31-13.35 13.38-15.49 14.83l.04-12.83c0-5.56.76-3.76 7.83-10.73l7.18-7.08c.88-.86 1.33-1.6 2.26-2.5 2.24-2.18.39-4.99-2.9-2.17-2.86 2.45-11.92 12.49-14.43 14.26l.06-10.06c-.02-5.19-.88-5 1.89-7.9l9.8-9.95c3.35-3.16 4.39-3.85 3.67-6.01-3.26-1.1-6.26 4.3-9.55 7.07-2.82 2.38-4.21 4.56-5.85 5.25l-.03-27.96c.01-1.56.62-4.1-1.27-4.61-3.23-.87-2.31 4.56-2.34 9-.06 7.83.26 15.94.06 23.7Z" style="fill:#fff"/>
         </svg>
       </div>
-      <!-- 2. Текст. Я заменил "Pine Place" на "Pine&Place" как у вас на скриншоте -->
       <span>Pine&Place</span>
     </a>
 
-    <!-- Центральный блок: Навигация (пока для примера) -->
-    <nav class="header-nav">
-      <ul>
-        <li><a href="/about">О проекте</a></li>
-        <li><a href="/blog">Блог</a></li>
-      </ul>
-    </nav>
+    <!--
+      1. КНОПКА-БУРГЕР
+      Теперь это не просто текст, а стилизованный контейнер с тремя линиями.
+    -->
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Меню</span>
+      <div class="hamburger-icon"></div>
+    </button>
 
-    <!-- Правый блок: Кнопки действий -->
-    <div class="header-right">
-      <a href="/list-your-property" class="btn btn-secondary">Разместить объект</a>
-      <a href="/login" class="btn btn-primary">Войти</a>
+    <!--
+      2. ОБЕРТКА ДЛЯ НАВИГАЦИИ
+      Структура та же, но к ней будут применяться новые, более надежные стили.
+    -->
+    <div class="nav-wrapper" id="primary-navigation" data-visible="false">
+      <nav class="header-nav">
+        <ul>
+          <li><a href="/about">О проекте</a></li>
+          <li><a href="/blog">Блог</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <a href="/list-your-property" class="btn btn-secondary">Разместить объект</a>
+        <a href="/login" class="btn btn-primary">Войти</a>
+      </div>
     </div>
   </div>
 </header>
 
+<script>
+  // 3. УЛУЧШЕННЫЙ СКРИПТ
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const siteHeader = document.querySelector('.site-header');
+
+  navToggle.addEventListener('click', () => {
+    // Проверяем текущее состояние по data-атрибуту
+    const isVisible = navWrapper.getAttribute('data-visible') === 'true';
+
+    // Меняем состояние на противоположное
+    navWrapper.setAttribute('data-visible', String(!isVisible));
+    navToggle.setAttribute('aria-expanded', String(!isVisible));
+
+    siteHeader.classList.toggle('is-menu-open', !isVisible);
+  });
+</script>
+
 <style>
-  .site-header {
-    background-color: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 1rem 0;
-    position: sticky; /* Делаем хедер "липким" при прокрутке */
-    top: 0;
-    z-index: 10;
+  /* --- ДЕСКТОПНЫЕ СТИЛИ (остаются почти без изменений) --- */
+  .site-header { background-color: #fff; border-bottom: 1px solid #e5e5e5; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .logo-icon-wrapper { width: 28px; flex-shrink: 0; }
+  .logo span { font-size: 1.25rem; font-weight: 700; color: #2C3E3A; line-height: 1; }
+  
+  .nav-wrapper { display: flex; align-items: center; gap: 2rem; }
+  .header-nav ul { margin: 0; padding: 0; list-style: none; display: flex; gap: 1.5rem; }
+  .header-nav a { text-decoration: none; color: #333; transition: color 0.2s; }
+  .header-nav a:hover { color: #2C3E3A; }
+  .header-right { display: flex; gap: 1rem; }
+  .btn { text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 600; transition: all 0.2s; }
+  .btn-primary { background-color: #2C3E3A; color: #fff; }
+  .btn-primary:hover { background-color: #1f2c29; }
+  .btn-secondary { background-color: transparent; color: #333; border: 1px solid #e5e5e5; }
+  .btn-secondary:hover { background-color: #f8f9fa; border-color: #ccc; }
+
+  /* Скрываем бургер на десктопе */
+  .mobile-nav-toggle { display: none; }
+
+  /* --- СТИЛИ ДЛЯ МОБИЛЬНОЙ АДАПТАЦИИ (max-width: 800px) --- */
+  @media (max-width: 800px) {
+    /* 1. Скрываем десктопную навигацию */
+    .nav-wrapper {
+      display: none; /* Полностью скрываем по умолчанию */
+      flex-direction: column;
+      align-items: stretch; /* Растягиваем элементы на всю ширину */
+      gap: 1.5rem;
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 2rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    /* Когда меню открыто, показываем его с помощью display: flex */
+    .nav-wrapper[data-visible="true"] {
+      display: flex;
+    }
+
+    .header-nav ul, .header-right {
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      gap: 1rem;
+    }
+    .btn { width: 100%; box-sizing: border-box; }
+
+    /* 2. Показываем и стилизуем кнопку-бургер */
+    .mobile-nav-toggle {
+      display: block;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      width: 24px;
+      height: 18px;
+    }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .hamburger-icon,
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background: #2C3E3A;
+      border-radius: 9999px;
+      transition: all .25s;
+    }
+    .hamburger-icon::before { top: -8px; }
+    .hamburger-icon::after { top: 8px; }
+
+    /* 3. Анимация бургера в "крестик" */
+    .site-header.is-menu-open .hamburger-icon {
+      background: transparent; /* Центральная линия исчезает */
+    }
+    .site-header.is-menu-open .hamburger-icon::before {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .site-header.is-menu-open .hamburger-icon::after {
+      transform: translateY(-8px) rotate(-45deg);
+    }
   }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Логотип */
-   .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  transition: transform 0.2s ease-in-out; /* <-- ДОБАВИТЬ ЭТО. Плавный переход */
-}
-
-.logo:hover {
-  transform: scale(1.02); /* <-- ДОБАВИТЬ ЭТО. Увеличиваем на 5% при наведении */
-}
-
-  /* 2. Обертка для иконки, чтобы контролировать ее размер */
-  .logo-icon-wrapper {
-    width: 28px; /* <-- ЗАДАЕМ РАЗМЕР ИКОНКИ! Можете поменять на 32px или 40px */
-    flex-shrink: 0; /* Гарантирует, что иконка не будет сжиматься */
-  }
-
-  /* 3. Стили для текста логотипа */
-  .logo span {
-    font-size: 1.25rem; 
-    font-weight: 700;
-    color: #2C3E3A;
-    line-height: 1; 
-  }
-
-  /* Навигация */
-  .header-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .header-nav a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.2s;
-  }
-
-  .header-nav a:hover {
-    color: #007A5A; /* Ваш фирменный зеленый цвет */
-  }
-
-  /* Кнопки */
-  .header-right {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .btn {
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-
-  .btn-primary {
-    background-color: #007A5A; /* Фирменный зеленый */
-    color: #fff;
-  }
-  .btn-primary:hover {
-    background-color: #005c44;
-  }
-
-  .btn-secondary {
-    background-color: transparent;
-    color: #333;
-    border: 1px solid #e5e5e5;
-  }
-  .btn-secondary:hover {
-    background-color: #f8f9fa;
-    border-color: #ccc;
-  }
-
-  @keyframes drop-in {
-  from {
-    transform: translateY(-50%); /* Начинаем за пределами экрана (на 50% высоты выше) */
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0); /* Заканчиваем в нормальном положении */
-    opacity: 1;
-  }
-}
-
-/* 2. Определяем анимацию для веточки */
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* 3. Применяем анимацию к нашим SVG-частям */
-#logo-pin {
-  /*                    название     длительность  плавность    задержка */
-  animation: drop-in   0.6s           ease-out      0.2s        backwards;
-}
-
-#logo-leaf {
-  /*                    название     длительность  плавность    задержка */
-  animation: fade-in   0.5s           ease-out      0.6s        backwards;
-}
-
-
-  /* TODO: Добавить стили для мобильной версии (гамбургер-меню) */
 </style>

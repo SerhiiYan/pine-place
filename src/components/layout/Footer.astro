@@ -79,7 +79,7 @@ import { Icon } from 'astro-icon/components';
   .footer-top {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Позволит колонкам переноситься на мобильных */
+    flex-wrap: wrap; /* Это свойство уже здесь, оно идеально! */
     gap: 2rem;
     margin-bottom: 2rem;
   }
@@ -165,5 +165,18 @@ import { Icon } from 'astro-icon/components';
   .footer-bottom p {
     margin: 0;
     font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-top {
+      flex-direction: column; /* Выстраиваем колонки друг под другом */
+      text-align: center; /* Центрируем текст */
+    }
+    .footer-column .logo {
+      justify-content: center; /* Центрируем логотип */
+    }
+    .social-icons {
+      justify-content: center; /* Центрируем иконки соцсетей */
+    }
   }
 </style>
