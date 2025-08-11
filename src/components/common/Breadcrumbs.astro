@@ -1,0 +1,62 @@
+---
+import { Icon } from 'astro-icon/components';
+
+// Компонент ожидает массив "крошек"
+const { crumbs } = Astro.props;
+if (!crumbs || crumbs.length === 0) return null;
+---
+
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumbs-list">
+    {crumbs.map((crumb, index) => (
+      <li class="breadcrumb-item">
+        {/* Если у "крошки" есть ссылка, делаем ее ссылкой */}
+        {crumb.href ? (
+          <a href={crumb.href}>{crumb.label}</a>
+        ) : (
+          /* Иначе это просто текст (последний элемент) */
+          <span aria-current="page">{crumb.label}</span>
+        )}
+        
+        {/* Показываем иконку-разделитель, если это не последняя "крошка" */}
+        {index < crumbs.length - 1 && (
+          <Icon name="mdi:chevron-right" class="separator" />
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Позволяет переноситься на новую строку на мобильных */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0; /* Отступ снизу до заголовка */
+  }
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .breadcrumb-item a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb-item a:hover {
+    color: #2C3E3A;
+  }
+  /* Стиль для последней, некликабельной "крошки" */
+  .breadcrumb-item span {
+    color: #333;
+    font-weight: 500;
+  }
+  .separator {
+    font-size: 1rem;
+    color: #ced4da;
+    margin: 0 0.5rem;
+  }
+</style>

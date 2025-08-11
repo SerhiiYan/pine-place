@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Минская область",
+    "slug": "minskaya-oblast",
+    "image": "/images/regions/minsk.jpg",
+    "crest": "/images/crests/minsk.png"
+  },
+  {
+    "name": "Гродненская область",
+    "slug": "grodnenskaya-oblast",
+    "image": "/images/regions/grodno.jpg",
+    "crest": "/images/crests/grodno.png"
+  },
+  {
+    "name": "Брестская область",
+    "slug": "brestskaya-oblast",
+    "image": "/images/regions/brest.jpg",
+    "crest": "/images/crests/brest.png"
+  },
+  {
+    "name": "Витебская область",
+    "slug": "vitebskaya-oblast",
+    "image": "/images/regions/vitebsk.jpg",
+    "crest": "/images/crests/vitebsk.png"
+  },
+  {
+    "name": "Гомельская область",
+    "slug": "gomelskaya-oblast",
+    "image": "/images/regions/gomel.jpg",
+    "crest": "/images/crests/gomel.png"
+  },
+  {
+    "name": "Могилевская область",
+    "slug": "mogilevskaya-oblast",
+    "image": "/images/regions/mogilev.jpg",
+    "crest": "/images/crests/mogilev.png"
+  }
+]

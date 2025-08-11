@@ -1,0 +1,120 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import allRegions from '@/data/regions.json';
+import transliterate from '@/utils/slugify.js';
+---
+
+<Layout title="Отдых в Беларуси: Выберите область">
+  <div class="page-container">
+    <header class="page-header">
+      <h1>Найдите свое место тишины и уюта</h1>
+      <p>Мы собрали лучшие уединенные домики в каждой области, чтобы вы могли сбежать от городской суеты и перезагрузиться на природе.</p>
+    </header>
+
+    <div class="regions-grid">
+  {allRegions.map(region => (
+    <a href={`/region/${transliterate(region.name)}`} class="region-card">
+      <img src={region.image} alt={`Живописный вид ${region.name}`} class="card-background" />
+      <div class="card-overlay"></div>
+      
+      <div class="card-content">
+        {region.crest && (
+          // --- ВОЗВРАЩАЕМ ОБЕРТКУ-"МЕДАЛЬОН" ---
+          <div class="card-crest-wrapper">
+            <img src={region.crest} alt={`Герб ${region.name}`} class="card-crest" />
+          </div>
+        )}
+        <h2 class="card-title">{region.name}</h2>
+        <p class="card-cta">Посмотреть домики &rarr;</p>
+      </div>
+    </a>
+  ))}
+</div>
+</Layout>
+<style>
+  /* --- Стили, которые не меняются --- */
+  .page-container { max-width: 1400px; margin: 2rem auto; padding: 0 1.5rem; }
+  .page-header { text-align: center; margin-bottom: 3rem; }
+  .page-header h1 { font-size: 2.5rem; color: #2C3E3A; margin-bottom: 0.5rem; }
+  .page-header p { font-size: 1.1rem; color: #6c757d; }
+  .regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+
+  /* --- СТИЛИ ДЛЯ ОБЪЕДИНЕННОГО ВАРИАНТА --- */
+  
+  .region-card {
+    position: relative; display: block; height: 400px; border-radius: 12px;
+    overflow: hidden; text-decoration: none; color: white;
+  }
+  .card-background {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s ease-out;
+  }
+  .region-card:hover .card-background { transform: scale(1.05); }
+
+  .card-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.1) 70%);
+    transition: background 0.3s ease-in-out;
+  }
+  .region-card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.2) 80%);
+  }
+
+  .card-content {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Стили для "медальона" */
+  .card-crest-wrapper {
+    width: 80px; height: 80px; border-radius: 50%;
+    
+    /* 1. Уменьшаем прозрачность фона, чтобы размытие было заметнее */
+    background: rgba(255, 255, 255, 0.4);
+    
+    /* 2. Усиливаем размытие */
+    backdrop-filter: blur(1px);
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex; justify-content: center; align-items: center;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+
+  /* Сам герб внутри медальона */
+  .card-crest {
+    width: 50px; height: auto;
+  }
+  
+  .card-title {
+    font-size: 1.75rem; font-weight: 700;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* Скрытый призыв к действию */
+  .card-cta {
+    opacity: 0; font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    transition: opacity 0.3s 0.1s;
+  }
+
+  /* --- АНИМАЦИЯ ПРИ НАВЕДЕНИИ --- */
+  .region-card:hover .card-crest-wrapper {
+    /* Теперь анимируется вся обертка-"медальон" */
+    transform: translateY(-35px) scale(0.9);
+  }
+  .region-card:hover .card-title {
+    transform: translateY(-40px);
+  }
+  .region-card:hover .card-cta {
+    opacity: 1;
+  }
+
+  /* Мобильная адаптация */
+  @media (max-width: 768px) {
+    .page-header h1 { font-size: 2rem; }
+    .regions-grid { grid-template-columns: 1fr; }
+  }
+</style>

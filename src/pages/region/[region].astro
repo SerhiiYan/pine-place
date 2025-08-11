@@ -1,0 +1,59 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ListingsGrid from '@/components/listings/ListingsGrid.jsx';
+import allListings from '@/data/listings.json';
+
+// --- ИМПОРТИРУЕМ НАШУ НОВУЮ УТИЛИТУ ---
+import transliterate from '@/utils/slugify.js';
+
+// getStaticPaths теперь использует импортированную функцию
+export function getStaticPaths() {
+  const uniqueRegions = [...new Set(allListings.map(l => l.region))];
+
+  return uniqueRegions.map(regionName => {
+    const listingsInRegion = allListings.filter(l => l.region === regionName);
+
+    return {
+      params: { region: transliterate(regionName) },
+      props: {
+        regionName: regionName,
+        listings: listingsInRegion,
+      },
+    };
+  });
+}
+
+const { regionName, listings } = Astro.props;
+---
+
+<Layout title={`Отдых в ${regionName}: домики и глэмпинги`}>
+  <div class="page-container">
+    <header class="page-header">
+      <h1>{regionName}</h1>
+      <p>Выберите идеальное место для отдыха из нашей коллекции домиков, коттеджей и глэмпингов.</p>
+    </header>
+
+    <ListingsGrid allListings={listings} client:visible />
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: #2C3E3A;
+    margin-bottom: 0.5rem;
+  }
+  .page-header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+  }
+</style>

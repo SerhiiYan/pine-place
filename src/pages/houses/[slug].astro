@@ -1,6 +1,9 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+import transliterate from '@/utils/slugify.js';
 import allListings from '@/data/listings.json';
+import Breadcrumbs from '@/components/common/Breadcrumbs.astro';
 import ImageGallery from '@/components/listings/ImageGallery.jsx'; 
 import BookingWidget from '@/components/listings/BookingWidget.astro';
 import KeyFeatures from '@/components/listings/KeyFeatures.astro';
@@ -17,56 +20,68 @@ export function getStaticPaths() {
 }
 
 const { listing } = Astro.props;
+const breadcrumbs = [
+  { label: 'Главная', href: '/' },
+  { label: 'Отдых в Беларуси', href: '/regions' },
+  { label: listing.region, href: `/region/${transliterate(listing.region)}` },
+  { label: listing.name }
+];
 ---
 
 <Layout title={listing.name}>
-  <!-- 2. Создаем главный контейнер для всей страницы -->
   <div class="page-container">
+    
+    <div class="desktop-breadcrumbs">
+      <Breadcrumbs crumbs={breadcrumbs} />
+    </div>
 
-    <!-- Заголовок страницы (название и местоположение) -->
     <header class="listing-header">
+      <a href={`/region/${transliterate(listing.region)}`} class="region-tag">
+        <Icon name="mdi:map-marker-outline" />
+        {listing.region}
+      </a>
       <h1>{listing.name}</h1>
-      <p>{listing.summary}</p>
-      <span>{listing.location}</span>
+      <p class="summary">{listing.summary}</p>
+      <span class="location">{listing.location}</span>
     </header>
 
-    <!-- Вставляем наш компонент галереи -->
     <ImageGallery images={listing.images} client:load />
     <KeyFeatures listing={listing} />
 
-    <!-- 3. Создаем двухколоночную сетку для контента -->
     <div class="content-grid">
-      
-      <!-- Левая колонка с основной информацией -->
       <div class="main-content">
         <section class="description-section">
           <h2>Описание</h2>
           <p>{listing.description}</p>
         </section>
-
-        <!-- Место для будущих компонентов -->
         <Amenities amenities={listing.amenities} client:load />
         <Conditions conditions={listing.conditions} />
         <Activities activities={listing.activities} />
         <HostProfile host={listing.host} />
       </div>
-
-      <!-- Правая, "липкая" колонка -->
       <aside class="sidebar">
         <BookingWidget listing={listing} />
       </aside>
-
     </div>
   </div>
 </Layout>
 
 <style>
+  /* --- ОБЩИЕ И ДЕСКТОПНЫЕ СТИЛИ --- */
   .page-container {
     max-width: 1200px;
-    margin: 2rem auto; /* Отступы сверху/снизу и центрирование */
+    margin: 2rem auto;
     padding: 0 1.5rem;
   }
 
+  .desktop-breadcrumbs {
+    margin-bottom: 1.5rem;
+  }
+
+  .region-tag {
+    display: none; /* Прячем на десктопе по умолчанию */
+  }
+  
   .listing-header {
     margin-bottom: 2rem;
   }
@@ -74,138 +89,105 @@ const { listing } = Astro.props;
     font-size: 2.25rem;
     margin-bottom: 0.5rem;
   }
-  .listing-header p {
+  .listing-header .summary {
     font-size: 1.1rem;
     color: #6c757d;
     margin-bottom: 0.5rem;
   }
-
-  /* --- Стили для двухколоночной сетки --- */
+  .listing-header .location {
+    font-size: 1rem;
+    color: #333;
+  }
+  
   .content-grid {
     display: grid;
-    /* Левая колонка в ~2 раза шире правой */
     grid-template-columns: 2fr 1fr; 
-    gap: 3rem; /* Большой отступ между колонками */
-   
+    gap: 3rem;
+    margin-top: 1.5rem;
   }
-
+  
   .main-content h2 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 0.5rem;
   }
   .main-content p {
     line-height: 1.7;
   }
-
-  /* --- Стили для "липкой" колонки --- */
+  
   .sidebar {
     position: sticky;
     top: 120px;
     align-self: start;
   }
-  /* --- Стили для временных заглушек --- */
-  .placeholder, .booking-widget-placeholder {
-    border: 2px dashed #e0e0e0;
-    padding: 2rem;
-    text-align: center;
-    border-radius: 8px;
-    margin-top: 2rem;
-    color: #6c757d;
-  }
-  .booking-widget-placeholder button {
-    margin-top: 1rem; padding: 0.8rem 1.5rem; border-radius: 8px; border: none; background-color: #eee;
-  }
 
-  /* Стили для секции удобств */
-  :global(.amenities-section) {
-    margin-top: 2rem;
-  }
-  :global(.amenities-section h2) {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 0.5rem;
-  }
-  :global(.amenities-preview-grid) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  :global(.amenity-item) {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  :global(.amenity-item [astro-icon]) {
-    font-size: 1.25rem;
-  }
-  :global(.show-all-btn) {
-    background-color: #fff;
-    color: #2C3E3A;
-    border: 1px solid #2C3E3A;
-    border-radius: 8px;
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  :global(.show-all-btn:hover) {
-    background-color: #f8f9fa;
-  }
-  
-  /* Стили для модального окна */
-  :global(.modal-backdrop) {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6); z-index: 100;
-    display: flex; justify-content: center; align-items: center;
-  }
-  :global(.modal-content) {
-    background: #fff; border-radius: 12px; padding: 2rem;
-    width: 90%; max-width: 600px; max-height: 80vh;
-    overflow-y: auto; position: relative;
-  }
-  :global(.modal-close-btn) {
-    position: absolute; top: 1rem; right: 1rem; font-size: 2rem;
-    background: none; border: none; cursor: pointer;
-  }
+  /* :GLOBAL СТИЛИ ДЛЯ ВНЕШНИХ КОМПОНЕНТОВ */
+  :global(.amenities-section) { margin-top: 2rem; }
+  :global(.amenities-section h2) { font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.5rem; }
+  :global(.amenities-preview-grid) { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  :global(.amenity-item) { display: flex; align-items: center; gap: 0.75rem; }
+  :global(.amenity-item [astro-icon]) { font-size: 1.25rem; }
+  :global(.show-all-btn) { background-color: #fff; color: #2C3E3A; border: 1px solid #2C3E3A; border-radius: 8px; padding: 0.7rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  :global(.show-all-btn:hover) { background-color: #f8f9fa; }
+  :global(.modal-backdrop) { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 100; display: flex; justify-content: center; align-items: center; }
+  :global(.modal-content) { background: #fff; margin: 0 20px 0 20px; border-radius: 12px; padding: 2rem; width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; position: relative; }
+  :global(.modal-close-btn) { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; background: none; border: none; cursor: pointer; }
   :global(.modal-content h2) { margin-bottom: 2rem; }
   :global(.category-group) { margin-bottom: 1.5rem; }
   :global(.category-group h3) { font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;}
   :global(.category-group ul) { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   :global(.category-group li) { display: flex; align-items: center; gap: 0.75rem; }
 
+
+  /* --- МОБИЛЬНАЯ АДАПТАЦИЯ (max-width: 800px) --- */
   @media (max-width: 800px) {
     .page-container {
+      margin-top: 1.5rem;
       padding: 0 1rem;
     }
+    
+    /* Управляем видимостью навигации */
+    .desktop-breadcrumbs {
+      display: none;
+    }
+    .region-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      color: #2C3E3A;
+      padding: 0.4rem 0.8rem;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .region-tag [astro-icon] {
+      font-size: 1.1rem;
+    }
+    
     .listing-header h1 {
       font-size: 1.75rem;
     }
 
-    /* 1. Отключаем грид и делаем обычный блочный поток */
+    /* Перестраиваем основную сетку */
     .content-grid {
-      display: block;
+      display: block; /* Отключаем grid, все встанет друг под другом */
     }
 
-    /* 2. Отключаем "липкость" и добавляем отступ */
     .sidebar {
-      position: static;
-      margin-top: 2rem;
+      position: static; /* Отключаем "липкость" */
+      margin-top: 2.5rem;
     }
     
-    /* Уменьшаем шрифты для заголовков секций */
     .main-content h2 {
       font-size: 1.3rem;
     }
 
-    /* (Опционально) Сетка удобств в одну колонку */
     :global(.amenities-preview-grid) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* Сетка удобств в одну колонку */
     }
   }
-  
 </style>

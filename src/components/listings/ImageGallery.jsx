@@ -1,77 +1,113 @@
-import React, { useState } from 'react';
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import Counter from "yet-another-react-lightbox/plugins/counter";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import "yet-another-react-lightbox/plugins/counter.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+import React, { useState, useEffect } from 'react';
+
+// Импорты Swiper - теперь нам нужен модуль Autoplay
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Zoom, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/zoom';
 
 export default function ImageGallery({ images }) {
-  if (!images || images.length === 0) return null;
+  if (!images || images.length === 0) {
+    return null;
+  }
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // --- ЛОГИКА КОМПОНЕНТА ---
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkIsMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
-  const openLightbox = (index) => {
-    setCurrentIndex(index);
-    setIsOpen(true);
-  };
+  const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 });
+  const openLightbox = (index) => setLightbox({ isOpen: true, index });
+  const closeLightbox = () => setLightbox({ isOpen: false, index: 0 });
 
-  const slides = images.map(src => ({ src }));
-  const totalImages = images.length;
-  
-  // --- КЛЮЧЕВЫЕ ИЗМЕНЕНИЯ В ЛОГИКЕ ---
   const mainImage = images[0];
-  // Теперь берем только 3 картинки для первых слотов
-  const sideImages = images.slice(1, 4); 
-  // Пятая картинка (если она есть) будет в "специальном" слоте
-  const lastVisibleImage = images[4]; 
-  // Считаем, сколько еще фото скрыто
-  const remainingCount = totalImages > 5 ? totalImages - 5 : 0;
+  const sideImages = images.slice(1, 4);
+  const lastVisibleImage = images[4];
+  const remainingCount = images.length > 5 ? images.length - 5 : 0;
 
+  // --- РЕНДЕРИНГ КОМПОНЕНТА ---
   return (
     <>
-      <div className="gallery-collage">
-        {/* Главное изображение */}
-        <div className="main-image" onClick={() => openLightbox(0)}>
-          <img src={mainImage} alt="Главное фото объекта" />
-        </div>
-        
-        {/* Первые 3 боковых изображения */}
-        {sideImages.map((image, index) => (
-          <div 
-            key={index}
-            className={`side-image-${index + 1}`} 
-            onClick={() => openLightbox(index + 1)}
+      {isMobile ? (
+        // === ВЕРСТКА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===
+        <div className="mobile-swiper-container">
+          <Swiper
+            // 1. Убираем Navigation, добавляем Autoplay
+            modules={[Autoplay, Zoom]}
+            
+            // 2. Включаем и настраиваем автопрокрутку
+            autoplay={{
+              delay: 3000, // Пауза 3 секунды между слайдами
+              disableOnInteraction: false, // Автопрокрутка не остановится после ручного свайпа
+            }}
+            
+            zoom={true}
+            loop={true}
           >
-            <img src={image} alt={`Фото объекта ${index + 2}`} />
+            {images.map((image, index) => (
+              <SwiperSlide key={index} onClick={() => openLightbox(index)}>
+                <div className="swiper-zoom-container">
+                  <img src={image} alt={`Фото объекта ${index + 1}`} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      ) : (
+        // === ВЕРСТКА ДЛЯ ДЕСКТОПНЫХ УСТРОЙСТВ ===
+        <div className="gallery-collage">
+          <div className="main-image" onClick={() => openLightbox(0)}>
+            <img src={mainImage} alt="Главное фото объекта" />
           </div>
-        ))}
+          {sideImages.map((image, index) => (
+            <div key={index} className={`side-image-${index + 1}`} onClick={() => openLightbox(index + 1)}>
+              <img src={image} alt={`Фото объекта ${index + 2}`} />
+            </div>
+          ))}
+          {lastVisibleImage && (
+            <div className="side-image-4 last-image-container" onClick={() => openLightbox(4)}>
+              <img src={lastVisibleImage} alt={`Фото объекта 5`} />
+              {remainingCount > 0 && <div className="overlay">+{remainingCount} фото</div>}
+            </div>
+          )}
+        </div>
+      )}
 
-        {/* "Специальный" четвертый слот */}
-        {lastVisibleImage && (
-          <div className="side-image-4 last-image-container" onClick={() => openLightbox(4)}>
-            <img src={lastVisibleImage} alt={`Фото объекта 5`} />
-            {remainingCount > 0 && (
-              <div className="overlay">
-                +{remainingCount} фото
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+      {/* ЛАЙТБОКС (общий для всех устройств) */}
+      {lightbox.isOpen && (
+        <div className="swiper-lightbox">
+          <button className="close-btn" onClick={closeLightbox}>&times;</button>
+          <Swiper
+            modules={[Navigation, Pagination, Zoom]}
+            initialSlide={lightbox.index}
+            navigation
+            pagination={{ clickable: true }}
+            zoom={true}
+            keyboard={true}
+            loop={true}
+            centeredSlides={true}
+            className="mySwiper"
+          >
+            {images.map((image, index) => (
+              <SwiperSlide key={index}>
+                <div className="swiper-zoom-container">
+                  <img src={image} alt={`Фото объекта ${index + 1}`} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
       
-      <Lightbox
-        open={isOpen}
-        close={() => setIsOpen(false)}
-        slides={slides}
-        index={currentIndex}
-        plugins={[Counter, Thumbnails]}
-        // --- КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: Добавляем кастомный класс ---
-        className="custom-lightbox"
-      />
- <style>{`
-  .gallery-collage {
+      <style>{`
+        /* --- ДЕСКТОПНЫЕ СТИЛИ (для коллажа) --- */
+        .gallery-collage {
           display: grid;
           gap: 0.5rem;
           border-radius: 16px;
@@ -92,19 +128,68 @@ export default function ImageGallery({ images }) {
         .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; transition: background 0.2s; }
         .last-image-container:hover .overlay { background: rgba(0, 0, 0, 0.7); }
 
-        /* --- МОБИЛЬНАЯ АДАПТАЦИЯ (max-width: 768px) --- */
+        /* --- МОБИЛЬНЫЕ СТИЛИ (для Swiper) --- */
+        .mobile-swiper-container {
+          width: 100%;
+          height: 500px;
+          border-radius: 16px;
+          overflow: hidden;
+          position: relative;
+        }
+        .mobile-swiper-container .swiper-slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        /* 3. Удаляем стили для стрелок, они нам больше не нужны */
+
+        /* --- СТИЛИ ДЛЯ SWIPER-ЛАЙТБОКСА (общие для всех устройств) --- */
+        .swiper-lightbox {
+          position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 9999; display: flex; align-items: center; justify-content: center;
+        }
+        .swiper-lightbox .mySwiper {
+          width: 100%; height: 100%;
+        }
+        .swiper-lightbox .swiper-slide {
+          display: flex; align-items: center; justify-content: center;
+        }
+        .swiper-lightbox .swiper-zoom-container img {
+          max-width: 90vw; max-height: 85vh; object-fit: contain;
+        }
+        .swiper-lightbox .close-btn {
+          position: absolute; top: 20px; right: 30px; font-size: 3rem; color: white; background: transparent; border: none; cursor: pointer; z-index: 10000;
+        }
+        .swiper-lightbox .swiper-button-next,
+        .swiper-lightbox .swiper-button-prev {
+          color: white; opacity: 0.7; transition: opacity 0.2s;
+        }
+        .swiper-button-next {
+          margin-right: 30px;
+        }
+        .swiper-button-prev {
+          margin-left: 30px;
+        }
+        .swiper-lightbox .swiper-button-next:hover,
+        .swiper-lightbox .swiper-button-prev:hover {
+          opacity: 1;
+        }
+        .swiper-lightbox .swiper-pagination-bullet-active {
+          background: white;
+        }
+
+        /* Адаптация лайтбокса для мобильных */
         @media (max-width: 768px) {
-          .gallery-collage {
-            grid-template-areas: "main main" "main main";
-            grid-template-columns: 1fr;
-            height: 300px; /* Уменьшаем высоту для мобильных */
-          }
-          /* Прячем все боковые картинки */
-          .side-image-1, .side-image-2, .side-image-3, .side-image-4 {
+          .swiper-lightbox .swiper-button-next,
+          .swiper-lightbox .swiper-button-prev {
             display: none;
           }
+          .swiper-lightbox .swiper-zoom-container img {
+            max-width: 100vw;
+            max-height: 90vh;
+          }
         }
-`}</style>
+      `}</style>
     </>
   );
 }
