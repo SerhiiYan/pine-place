@@ -17,7 +17,10 @@ import {
   MdVideocam,
   MdPhishing,
   MdOutlineFireplace,
-  MdSailing
+  MdSailing,
+  MdTune,
+  MdCheck,
+  MdClose
 } from 'react-icons/md';
 
 // --- ШАГ 2: СОЗДАЕМ "КАРТУ" ДЛЯ СОПОСТАВЛЕНИЯ СТРОК И КОМПОНЕНТОВ ---
@@ -36,7 +39,10 @@ const ICON_MAP = {
   'md:tv': MdTv,
   'md:videocam': MdVideocam,
   'md:phishing': MdPhishing,
-  'md:sailing': MdSailing
+  'md:sailing': MdSailing,
+  'md:tune': MdTune,
+  'md:check': MdCheck,
+  'md:close': MdClose
 };
 
 const Icon = ({ name, size = '1em', color = 'currentColor', ...props }) => {

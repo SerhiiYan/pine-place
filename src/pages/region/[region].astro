@@ -2,17 +2,15 @@
 import Layout from '@/layouts/Layout.astro';
 import ListingsGrid from '@/components/listings/ListingsGrid.jsx';
 import allListings from '@/data/listings.json';
-
-// --- ИМПОРТИРУЕМ НАШУ НОВУЮ УТИЛИТУ ---
 import transliterate from '@/utils/slugify.js';
+import Breadcrumbs from '@/components/common/Breadcrumbs.astro';
+import RegionSearchBar from '@/components/listings/RegionSearchBar.jsx';
 
-// getStaticPaths теперь использует импортированную функцию
 export function getStaticPaths() {
   const uniqueRegions = [...new Set(allListings.map(l => l.region))];
 
   return uniqueRegions.map(regionName => {
     const listingsInRegion = allListings.filter(l => l.region === regionName);
-
     return {
       params: { region: transliterate(regionName) },
       props: {
@@ -24,36 +22,389 @@ export function getStaticPaths() {
 }
 
 const { regionName, listings } = Astro.props;
+
+// Готовим "хлебные крошки"
+const breadcrumbs = [
+  { label: 'Главная', href: '/' },
+  { label: 'Отдых в Беларуси', href: '/regions' },
+  { label: regionName }
+];
 ---
 
-<Layout title={`Отдых в ${regionName}: домики и глэмпинги`}>
+<Layout title={`Уединенный отдых в ${regionName} | Место твоей тишины`}>
+  <section class="hero">
+    <div class="hero-content">
+      <Breadcrumbs crumbs={breadcrumbs} />
+      <h1>Уединенные уголки Минской области</h1>
+      <p>Найдите идеальное место вашей тишины.</p>
+      
+      <RegionSearchBar client:load />
+    </div>
+  </section>
+  
   <div class="page-container">
-    <header class="page-header">
-      <h1>{regionName}</h1>
-      <p>Выберите идеальное место для отдыха из нашей коллекции домиков, коттеджей и глэмпингов.</p>
-    </header>
-
     <ListingsGrid allListings={listings} client:visible />
   </div>
 </Layout>
 
 <style>
+  /* --- СТИЛИ ДЛЯ HERO-СЕКЦИИ --- */
+  .hero {
+    position: relative;
+    padding: 4rem 1.5rem 6rem 1.5rem;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('/images/regions/minsk.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .hero :global(.breadcrumbs-list) {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .hero :global(.breadcrumb-item a), .hero :global(.separator) {
+    color: rgba(255,255,255,0.8);
+  }
+  .hero :global(.breadcrumb-item a:hover) {
+    color: white;
+  }
+  .hero :global(.breadcrumb-item span) {
+    color: white;
+  }
+  
+  .hero h1 { font-size: 3rem; color: white; margin-bottom: 0.5rem; text-shadow: 1px 1px 8px rgba(0,0,0,0.6); }
+  .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 2.5rem; }
+  
   .page-container {
-    max-width: 1400px;
-    margin: 2rem auto;
+    background: #fff;
+  }
+
+  /* --- :GLOBAL СТИЛИ ДЛЯ REACT-КОМПОНЕНТОВ --- */
+
+  /* Контейнер для нового фильтра */
+  :global(.region-search-container) {
+    /* Этот контейнер просто обертка, ему не нужны особые стили */
+  }
+
+  /* Главная поисковая панель */
+  :global(.main-search-bar) {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    padding: 0.5rem;
+    gap: 0.5rem;
+    text-align: left;
+  }
+  :global(.search-input) {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  :global(.dropdown-filters) {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  :global(.dropdown-filters select) {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #333;
+  }
+
+  /* Блок с тегами-pills */
+  :global(.amenity-pills) {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  :global(.pill-btn) {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  :global(.pill-btn:hover) {
+    background: rgba(255,255,255,0.4);
+  }
+  :global(.pill-btn.active) {
+    background: #fff;
+    border-color: #fff;
+    color: #2C3E3A;
+    font-weight: 600;
+  }
+  
+  /* Стили для ListingsGrid */
+  :global(.results-section) {
+    padding-top: 4rem;
+  }
+  :global(.results-header) {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 2.5rem auto;
     padding: 0 1.5rem;
   }
-  .page-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .page-header h1 {
-    font-size: 2.5rem;
-    color: #2C3E3A;
+  :global(.results-header h2) {
+    font-size: 1.75rem;
+    color: #333;
     margin-bottom: 0.5rem;
   }
-  .page-header p {
+  :global(.listings-grid) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+  :global(.no-results) {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+  }
+  :global(.load-more-container) {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  :global(.load-more-button) {
+    background-color: #2C3E3A;
+    color: #fff;
+    border: 2px solid #2C3E3A;
+    border-radius: 8px;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  :global(.load-more-button:hover) {
+    background-color: #fff;
+    color: #2C3E3A;
+  }
+
+  :global(.filters-btn) {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  :global(.filters-btn:hover) {
+    background-color: #e9ecef;
+  }
+  
+  /* Стили для модального окна */
+  :global(.filters-modal-backdrop) {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1001; /* Выше хедера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  :global(.filters-modal-content) {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    
+    /* --- РЕГУЛИРОВКА: Ширина и Высота --- */
+    max-width: 680px;
+    max-height: 75vh; /* Ограничиваем высоту (75% от высоты экрана) */
+    
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+
+  :global(.modal-header) {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  :global(.modal-header h2) {
+    margin: 0;
     font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  /* --- ИЗМЕНЕНИЕ: Позиционирование крестика --- */
+  :global(.modal-close-btn) {
+    /* Теперь это не часть flex-потока, а просто кнопка */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #495057;
+    padding: 0;
+  }
+
+  :global(.modal-body) {
+    padding: 1rem 1.5rem; /* Уменьшаем отступы */
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+  
+  :global(.category-group h3) {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-bottom: 0.75rem; /* 1. Добавляем отступ под текстом */
+    border-bottom: 1px solid #e9ecef; /* 2. Рисуем ту самую линию */
+  }
+
+  :global(.category-group) { margin-bottom: 1.5rem; }
+  :global(.checkbox-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Уменьшаем minmax */
+    gap: 1rem;
+  }
+  
+  :global(.checkbox-label) {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem; /* Уменьшаем шрифт */
+  }
+  :global(.checkbox-label input[type="checkbox"]) {
+    display: none;
+  }
+  :global(.custom-checkbox) {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #adb5bd;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  :global(.custom-checkbox .icon) {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s;
+    color: white; /* <-- ГАЛОЧКА ВСЕГДА БЕЛАЯ */
+    font-size: 1.2rem;
+  }
+  :global(input[type="checkbox"]:checked + .custom-checkbox) {
+    background: #2C3E3A;
+    border-color: #2C3E3A;
+  }
+  :global(input[type="checkbox"]:checked + .custom-checkbox .icon) {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  :global(.modal-footer) {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    background: #f8f9fa;
+  }
+  :global(.reset-btn) {
+    background: none;
+    border: none;
+    color: #212529;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  :global(.show-results-btn) {
+    background: #2C3E3A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  :global(.reset-btn-main) {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0.5rem; /* Отступ от соседних кнопок */
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
     color: #6c757d;
+    border-radius: 50%;
+    transition: all 0.2s;
+    animation: fadeIn 0.3s ease; /* Анимация появления */
+  }
+  :global(.reset-btn-main:hover) {
+    background-color: #f1f3f5;
+    color: #212529;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Адаптация модального окна */
+  @media (max-width: 768px) {
+    :global(.checkbox-grid) { grid-template-columns: 1fr; }
+  }
+
+  /* --- Мобильная адаптация --- */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 1rem 4rem 1rem;
+    }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    
+    :global(.main-search-bar) {
+      flex-direction: column;
+    }
+    :global(.dropdown-filters) {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>

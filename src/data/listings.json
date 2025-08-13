@@ -444,5 +444,1215 @@
         }
       ]
     }
+  },
+  {
+    "slug": "lake-house-brest",
+    "name": "Лесной house под Брестом",
+    "status": "active",
+    "summary": "Современный А фрейм в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Брестская область",
+    "type": "Хижина",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 2,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-vitebsk",
+    "name": "Дом у реки под Витебском",
+    "status": "active",
+    "summary": "Современный а фрейм у реки для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.51,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Витебская область",
+    "type": "A-frame",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "cozy-hut-minsk",
+    "name": "Домик у сосны под Минском",
+    "status": "active",
+    "summary": "Современный домик в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Минская область",
+    "type": "Хижина",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-asdfggsd",
+    "name": "Лесной house под Гродно",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Брестская область",
+    "type": "A-frame",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-asdfxno",
+    "name": "Лесной house ",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Витебская область",
+    "type": "Barnhouse",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-housec-axasd",
+    "name": "Лесной house под Гродно",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Брестская область",
+    "type": "Barnhouse",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-opnaa",
+    "name": "дом под Гродно",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Брестская область",
+    "type": "Усадьба",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-docs",
+    "name": "Лесной house под окном",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Гродненская область",
+    "type": "Barnhouse",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-fhgf",
+    "name": "Лесной house под Гродно",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Брестская область",
+    "type": "A-frame",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-gwqdsa",
+    "name": "Лесной house под Гродно",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Гродненская область",
+    "type": "Barnhouse",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "forest-house-fano",
+    "name": "Лесной house под Гродно",
+    "status": "active",
+    "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
+    "reviews": {
+    "overallRating": 4.91,
+    "totalCount": 18,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Екатерина",
+        "avatar": "/images/avatars/female-1.jpg",
+        "date": "2024-07-15",
+        "rating": 5,
+        "text": "Это было просто волшебно! Невероятное единение с природой. Домик чистый, уютный, а вид из окна — выше всяких похвал. Обязательно вернемся!"
+      },
+      {
+        "id": 2,
+        "author": "Андрей",
+        "avatar": "/images/avatars/male-1.jpg",
+        "date": "2024-06-28",
+        "rating": 4.8,
+        "text": "Отличное место для перезагрузки. Все продумано до мелочей. Немного не хватило дров для камина, но в остальном все супер."
+      }
+    ]
+  },
+    "mainImage": "/images/test.jpg",
+    "images": [
+      "/images/test.jpg"
+    ],
+    "region": "Гродненская область",
+    "type": "Barnhouse",
+    "allowsPets": true,
+    "familyFriendly": true,
+    "location": "Гродненский район",
+    "description": "Сбегите от городской суеты в наш стильный Barnhouse домик, расположенный всего в 30 км от Гродно. Идеально для семейного отдыха и уикендов на природе.",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": {
+    "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
+    "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
+  },
+    "coordinates": { "latitude": 54.12, "longitude": 27.85 },
+    "contacts": { 
+      "phone": "+375447654321", 
+      "instagram": "https://instagram.com/forest_frame" 
+    },
+    "activities": {
+      "title": "Чем заняться поблизости",
+      "list": ["swimming", "fishing", "kayaking", "biking"],
+      "description": "Расположение на берегу озера идеально подходит для водных активностей. В 15 минутах езды находится конная ферма, где можно заказать прогулки по лесу."
+    },
+    "host": {
+      "name": "Екатерина",
+      "avatar": "/images/hosts/test.png",
+      "joined": 2021
+    },
+    "conditions": {
+      "title": "Стоимость и условия",
+      "subtitle": "Прозрачные цены и понятные правила для вашего идеального отдыха",
+      "sections": [
+        {
+          "title": "Основные цены",
+          "items": [
+            { "label": "Воскресенье - Четверг", "value": "300 BYN/ночь", "icon": "mdi:calendar-week" },
+            { "label": "Пятница", "value": "350 BYN/ночь", "icon": "mdi:calendar" },
+            { "label": "Суббота", "value": "400 BYN/ночь", "icon": "mdi:calendar-star" }
+          ]
+        },
+        {
+          "title": "Дополнительные услуги",
+          "items": [
+            { "label": "Дополнительный гость", "value": "+50 BYN", "icon": "mdi:account-plus-outline" },
+            { "label": "Горячая купель", "value": "150 BYN", "icon": "mdi:hot-tub" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с детьми",
+          "items": [
+            { "label": "Дети до 6 лет", "value": "Бесплатно (один ребенок)", "icon": "mdi:human-child" }
+          ]
+        },
+        {
+          "title": "Правила для гостей с питомцами",
+          "items": [
+            { "label": "Проживание разрешено", "value": "По предварительному согласованию", "icon": "mdi:paw" }
+          ],
+          "footnote": "*Может взиматься дополнительная плата или залог."
+        },
+        {
+          "title": "Бронирование и отмена",
+          "items": [
+            { "label": "Предоплата", "value": "50% при бронировании", "icon": "mdi:cash-check" },
+            { "label": "Остаток", "value": "50% в день заезда", "icon": "mdi:credit-card-check-outline" },
+            { "label": "Полный возврат", "value": "при отмене за 7+ дней", "icon": "mdi:cash-refund" },
+            { "label": "Без возврата", "value": "при отмене менее чем за 7 дней", "icon": "mdi:cash-remove" }
+          ]
+        },
+        {
+          "title": "Правила дома",
+          "items": [
+            { "label": "Заезд", "value": "после 15:00", "icon": "mdi:clock-start" },
+            { "label": "Выезд", "value": "до 12:00", "icon": "mdi:clock-end" }
+          ]
+        }
+      ]
+    }
   }
 ]
