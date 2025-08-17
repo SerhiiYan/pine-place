@@ -4,6 +4,9 @@ import { filters, resetRegionFilters } from '@/stores/filters.js';
 import amenitiesDirectory from '@/data/amenities-directory.json';
 import FiltersModal from './FiltersModal.jsx'; // <-- 1. ИМПОРТИРУЕМ МОДАЛЬНОЕ ОКНО
 import Icon from '@/components/common/Icon.jsx'; 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css'; // Базовые стили Swiper
 
 // Хук для "отложенного" обновления поиска
 const useDebounce = (value, delay) => {
@@ -15,7 +18,7 @@ const useDebounce = (value, delay) => {
   return debouncedValue;
 };
 
-export default function RegionSearchBar() {
+export default function RegionSearchBar({types}) {
   const $filters = useStore(filters);
   const [localSearchTerm, setLocalSearchTerm] = useState('');
   const debouncedSearchTerm = useDebounce(localSearchTerm, 300);
@@ -54,12 +57,6 @@ export default function RegionSearchBar() {
     { value: 4, label: "4+ гостя" }, { value: 6, label: "6+ гостей" },
   ];
 
-  const typeOptions = [
-    { value: "Все", label: "Тип жилья" }, { value: "A-frame", label: "A-frame" },
-    { value: "Хижина", label: "Хижина" }, { value: "Коттедж", label: "Коттедж" },
-    { value: "Barnhouse", label: "Barnhouse" },
-  ];
-
   const filterableAmenities = Object.entries(amenitiesDirectory)
     .filter(([, value]) => value.isFilterable)
     .map(([key, value]) => ({ key, ...value }));
@@ -79,12 +76,12 @@ export default function RegionSearchBar() {
           <select value={$filters.guests} onChange={e => handleFilterChange('guests', Number(e.target.value))}>
             {guestOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
           </select>
-          <select value={$filters.type} onChange={e => handleFilterChange('type', e.target.value)}>
-            {typeOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+          <select value={$filters.type} onChange={e => handleFilterChange('type', e.target.value)}>  
+            {types && types.map(type => <option key={type} value={type}>{type === 'Все' ? 'Тип жилья' : type}</option>)}
           </select>
           <button className="filters-btn" onClick={() => setIsModalOpen(true)}>
-              <Icon name="md:tune" />
-            </button>
+            <Icon name="md:tune" />
+          </button>
           {isFilterApplied && (
               <button className="reset-btn-main" onClick={handleReset} title="Сбросить фильтры">
                 <Icon name="md:close" />
@@ -93,17 +90,51 @@ export default function RegionSearchBar() {
         </div>
       </div>
 
-      <div className="amenity-pills">
-        {filterableAmenities.map(amenity => (
-          <button
-            key={amenity.key}
-            className={`pill-btn ${$filters.activeAmenities.includes(amenity.key) ? 'active' : ''}`}
-            onClick={() => handleAmenityToggle(amenity.key)}
+      <div className="amenity-pills-carousel">
+          <Swiper
+            // 1. ПОДКЛЮЧАЕМ НОВЫЙ МОДУЛЬ
+            modules={[Autoplay]}
+
+            // 2. НАСТРАИВАЕМ AUTOPLAY ДЛЯ БЕСКОНЕЧНОГО ДВИЖЕНИЯ
+            autoplay={{
+              delay: 0, // Без задержки между слайдами
+              disableOnInteraction: false, // Не останавливать после ручного свайпа
+            }}
+            speed={5000} // СКОРОСТЬ: Чем больше значение, тем медленнее движение (5000 = 5 секунд на один "проход")
+            
+            loop={true} // Бесконечная прокрутка
+            slidesPerView={'auto'}
+            spaceBetween={12}
+            className="pills-swiper"
           >
-            {amenity.name}
-          </button>
-        ))}
-      </div>
+            {filterableAmenities.map(amenity => (
+              <SwiperSlide key={amenity.key}>
+                <button
+                  className={`pill-btn ${$filters.activeAmenities.includes(amenity.key) ? 'active' : ''}`}
+                  onClick={() => handleAmenityToggle(amenity.key)}
+                >
+                  <Icon name={amenity.icon} size="1.1em" />
+                  {amenity.name}
+                </button>
+              </SwiperSlide>
+            ))}
+            {/* 
+              ДУБЛИРУЕМ СЛАЙДЫ: Это "хак" для Swiper, чтобы создать
+              абсолютно бесшовную анимацию при включенном Autoplay.
+            */}
+            {filterableAmenities.map(amenity => (
+              <SwiperSlide key={`${amenity.key}-clone`}>
+                <button
+                  className={`pill-btn ${$filters.activeAmenities.includes(amenity.key) ? 'active' : ''}`}
+                  onClick={() => handleAmenityToggle(amenity.key)}
+                >
+                  <Icon name={amenity.icon} size="1.1em" />
+                  {amenity.name}
+                </button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
     </div>
     {isModalOpen && <FiltersModal onClose={() => setIsModalOpen(false)} />}
     </>

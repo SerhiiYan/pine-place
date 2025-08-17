@@ -16,7 +16,6 @@ export default function SearchBar({ regions, types }) {
     { value: 2, label: "2+ гостя" },
     { value: 4, label: "4+ гостя" },
     { value: 6, label: "6+ гостей" },
-    { value: 8, label: "8+ гостей" },
   ];
 
   return (

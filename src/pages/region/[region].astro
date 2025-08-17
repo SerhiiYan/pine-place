@@ -22,7 +22,7 @@ export function getStaticPaths() {
 }
 
 const { regionName, listings } = Astro.props;
-
+const uniqueTypes = ["Все", ...new Set(listings.map(l => l.type))];
 // Готовим "хлебные крошки"
 const breadcrumbs = [
   { label: 'Главная', href: '/' },
@@ -38,7 +38,7 @@ const breadcrumbs = [
       <h1>Уединенные уголки Минской области</h1>
       <p>Найдите идеальное место вашей тишины.</p>
       
-      <RegionSearchBar client:load />
+      <RegionSearchBar types={uniqueTypes} client:load />
     </div>
   </section>
   
@@ -406,5 +406,35 @@ const breadcrumbs = [
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+  }
+  /* --- ДОБАВЬТЕ ЭТИ СТИЛИ В [region].astro --- */
+  
+  /* Контейнер для карусели */
+  :global(.amenity-pills-carousel) {
+    margin-top: 1.5rem;
+    cursor: grab; /* Показываем пользователю, что этот блок можно "схватить" */
+  }
+  
+  /* Каждый слайд должен иметь автоматическую ширину */
+  :global(.pills-swiper .swiper-slide) {
+    width: auto;
+  }
+  
+  /* Стили для самих тегов остаются почти без изменений,
+     но мы можем добавить им иконки для красоты */
+  :global(.pill-btn) {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    
+    /* Сделаем теги чуть "умнее" - с иконками */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 </style>
