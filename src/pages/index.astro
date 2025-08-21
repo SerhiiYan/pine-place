@@ -15,6 +15,7 @@ const uniqueTypes = ["Все", ...new Set(allListings.map(l => l.type))];
         <h1 class="hero-title">Уникальный отдых в Беларуси: глэмпинги, коттеджи и домики на природе</h1>
         <p class="hero-subtitle">Мы вручную отбираем самые красивые и уютные места по всей стране.</p>
         <SearchBar regions={uniqueRegions} types={uniqueTypes} client:load />
+        
       </div>
     </section>
 

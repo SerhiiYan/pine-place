@@ -11,6 +11,8 @@ import Amenities from '@/components/listings/Amenities.jsx'
 import Conditions from '@/components/listings/Conditions.astro';
 import Activities from '@/components/listings/Activities.astro';
 import HostProfile from '@/components/listings/HostProfile.astro';
+import allHosts from '@/data/hosts.json';
+import OtherListings from '@/components/listings/OtherListings.astro';
 
 export function getStaticPaths() {
   return allListings.map(listing => ({
@@ -20,6 +22,13 @@ export function getStaticPaths() {
 }
 
 const { listing } = Astro.props;
+
+// --- НОВАЯ ЛОГИКА: Находим другие домики этого же хоста ---
+const otherListings = allListings.filter(
+  item => item.hostId === listing.hostId && item.slug !== listing.slug
+);
+const host = allHosts[listing.hostId]; // Находим хоста для заголовка
+
 const breadcrumbs = [
   { label: 'Главная', href: '/' },
   { label: 'Отдых в Беларуси', href: '/regions' },
@@ -57,12 +66,13 @@ const breadcrumbs = [
         <Amenities amenities={listing.amenities} client:load />
         <Conditions conditions={listing.conditions} />
         <Activities activities={listing.activities} />
-        <HostProfile host={listing.host} />
+        <HostProfile hostId={listing.hostId} />
       </div>
       <aside class="sidebar">
         <BookingWidget listing={listing} />
       </aside>
     </div>
+    <OtherListings listings={otherListings} host={host} />
   </div>
 </Layout>
 

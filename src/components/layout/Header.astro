@@ -5,7 +5,7 @@
   <div class="container">
     <a href="/" class="logo">
       <div class="logo-icon-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 154.04" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 154" aria-hidden="true">
           <path id="logo-pin" style="fill:#2c3e3a" d="M50.49.14C40.3.87 32.65 4.14 25.6 8.29c-2.97 1.75-6.78 4.84-9.16 7.31l-3.94 4.09C-1.2 33.91 2.05 56.94 9.29 77.14c9.45 26.4 32.42 51.28 48.38 74.84 1.58 2.33 2.78 3.05 4.75.24 4.6-6.6 9.03-12.54 13.76-19.14C94.81 107.06 121.17 75.27 113 41.57c-6.08-25.07-30.31-43.25-56.98-41.35Z" style="fill:#2c3e3a"/>
           <path id="logo-leaf" style="fill:#fff" transform="translate(4 0)" d="m52.52 52.6-11.62-11.47c-2.99-3.16-5.53-.2-1.59 3.42l4.44 4.33c2.02 2 1.8 1.41 4.39 4.38 1.04 1.19 2.92 3.47 4.29 4.34l.05 16.07c-1.68-.95-5.78-5.75-8.43-8.26-4.59-4.33-6.52-7.86-9.57-6.21-.29 2.18.04 2.56 1.19 3.61l15.43 14.92c1.92 2.35 1.38 2.97 1.39 7.47l.05 10.37c-2.05-1.04-2.85-3.13-5.05-5.09-2.81-2.5-6.7-7.35-10.09-10.37-1.88-1.68-2.73-4.8-5.84-3-.38 2.38.81 2.56 2.02 3.87 1.04 1.12 1.86 2.35 2.89 3.35l11.86 12.63c4.1 4.61 4.18.4 4.16 12.01-.01 1.69-.47 6.02.64 7 3.69 3.22 3.01-5.18 3.01-8.09l0-5.85c0-2.43.73-2.25 2.19-3.58 1.15-1.05 1.69-1.97 2.78-3.06l11.81-11.58c2.52-2.45 5.24-4.82 4.34-7-2.46-1-4.31 1.99-5.66 3.48-2.1 2.31-13.35 13.38-15.49 14.83l.04-12.83c0-5.56.76-3.76 7.83-10.73l7.18-7.08c.88-.86 1.33-1.6 2.26-2.5 2.24-2.18.39-4.99-2.9-2.17-2.86 2.45-11.92 12.49-14.43 14.26l.06-10.06c-.02-5.19-.88-5 1.89-7.9l9.8-9.95c3.35-3.16 4.39-3.85 3.67-6.01-3.26-1.1-6.26 4.3-9.55 7.07-2.82 2.38-4.21 4.56-5.85 5.25l-.03-27.96c.01-1.56.62-4.1-1.27-4.61-3.23-.87-2.31 4.56-2.34 9-.06 7.83.26 15.94.06 23.7Z" style="fill:#fff"/>
         </svg>
@@ -65,7 +65,7 @@
   .site-header { background-color: #fff; border-bottom: 1px solid #e5e5e5; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
   .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-  .logo-icon-wrapper { width: 28px; flex-shrink: 0; }
+  .logo-icon-wrapper { width: 28px; flex-shrink: 0; animation: subtle-float 6s ease-in-out infinite; }
   .logo span { font-size: 1.25rem; font-weight: 700; color: #2C3E3A; line-height: 1; }
   
   .nav-wrapper { display: flex; align-items: center; gap: 2rem; }
@@ -81,7 +81,17 @@
 
   /* Скрываем бургер на десктопе */
   .mobile-nav-toggle { display: none; }
-
+@keyframes subtle-float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(3px); /* Поднимаем всего на 3 пикселя */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
   /* --- СТИЛИ ДЛЯ МОБИЛЬНОЙ АДАПТАЦИИ (max-width: 800px) --- */
   @media (max-width: 800px) {
     /* 1. Скрываем десктопную навигацию */

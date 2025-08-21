@@ -3,20 +3,14 @@ import { Icon } from 'astro-icon/components';
 
 const { listing } = Astro.props;
 
-// БОЛЕЕ БЕЗОПАСНАЯ функция для получения цены
+// Вспомогательные функции (без изменений)
 const getBasePrice = (l) => {
   try {
-    // Используем optional chaining (?.) чтобы избежать ошибок, если чего-то нет
     const priceItem = l?.conditions?.sections?.find(s => s.title === "Основные цены")?.items?.[0]?.value;
     if (!priceItem) return null;
     return priceItem.match(/\d+/)[0];
-  } catch (e) {
-    console.error("Не удалось получить цену для:", l.slug, e);
-    return null;
-  }
+  } catch (e) { return null; }
 };
-
-// БОЛЕЕ БЕЗОПАСНАЯ функция для получения рейтинга
 const getRatingSummary = (l) => {
   const rating = l?.reviews?.overallRating;
   const count = l?.reviews?.totalCount;
@@ -29,14 +23,15 @@ const ratingSummary = getRatingSummary(listing);
 ---
 
 <div class="widget-box">
-  <div class="price-line">
+  <div class-name="price-line">
     {basePrice ? (
       <>
-        <span class="price">от {basePrice} BYN</span>
+        <span class="price-prefix">от</span>
+        <span class="price-amount">{basePrice} BYN</span>
         <span class="per-night">/ ночь</span>
       </>
     ) : (
-      <span class="price">Цена по запросу</span>
+      <span class="price-amount">Цена по запросу</span>
     )}
   </div>
 
@@ -47,35 +42,94 @@ const ratingSummary = getRatingSummary(listing);
   )}
 
   <div class="cta-buttons">
-    {/* Проверяем наличие контактов перед рендерингом кнопок */}
     {listing.contacts?.instagram && (
       <a href={listing.contacts.instagram} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
         <Icon name="mdi:instagram" />
         Написать в Instagram
       </a>
     )}
+
+    {/* --- ИЗМЕНЕНИЕ: Теперь это не ссылка <a>, а простой <div> --- */}
     {listing.contacts?.phone && (
-      <a href={`tel:${listing.contacts.phone}`} class="btn btn-secondary">
-        <Icon name="mdi:phone-outline" />
-        Показать телефон
-      </a>
+      <div class="phone-display">
+        <Icon name="mdi:phone" />
+        <span>{listing.contacts.phone}</span>
+      </div>
     )}
   </div>
 
-  <p class="disclaimer">Нажимая кнопку, вы связываетесь напрямую с владельцем.</p>
+  <p class="disclaimer">Нажимая кнопку, Вы связываетесь напрямую с владельцем.</p>
 </div>
 
 <style>
-  .widget-box { border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-  .price-line { margin-bottom: 0.75rem; }
-  .price { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; }
+  .widget-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .price-line {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .price-prefix { font-size: 1.2rem; font-weight: 700; color: #1a1a1a; }
+  .price-amount { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; }
   .per-night { font-size: 1rem; color: #6c757d; }
-  .rating-summary { font-size: 0.9rem; color: #333; margin-bottom: 1.5rem; }
-  .cta-buttons { display: flex; flex-direction: column; gap: 0.75rem; }
-  .btn { width: 100%; padding: 0.8rem 1rem; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.2s; box-sizing: border-box; }
-  .btn-primary { background-color: #2C3E3A; color: #fff; border: 1px solid #2C3E3A; }
-  .btn-primary:hover { background-color: #1f2c29; }
-  .btn-secondary { background-color: #fff; color: #2C3E3A; border: 1px solid #2C3E3A; }
-  .btn-secondary:hover { background-color: #f8f9fa; }
-  .disclaimer { font-size: 0.8rem; color: #6c757d; text-align: center; margin: 1.5rem 0 0 0; }
+  
+  .rating-summary {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Общий базовый класс для кнопок и блока с телефоном */
+  .btn, .phone-display {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  /* Стили для основной кнопки-ссылки */
+  .btn-primary {
+    background-color: var(--brand-dark, #2C3E3A);
+    color: #fff;
+    border: 1px solid transparent;
+    transition: background-color 0.2s;
+  }
+  .btn-primary:hover {
+    background-color: #1f2c29;
+  }
+  
+  /* --- ИЗМЕНЕНИЕ: Стили для НЕкликабельного блока с телефоном --- */
+  .phone-display {
+    background-color: #f8f9fa;
+    color: #212529;
+    border: 1px solid #e9ecef;
+    cursor: default; /* Курсор не будет меняться на "руку" */
+  }
+  
+  .disclaimer {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-align: center;
+    margin: 1.5rem 0 0 0;
+  }
 </style>

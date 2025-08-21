@@ -3,36 +3,42 @@
     "name": "Минская область",
     "slug": "minskaya-oblast",
     "image": "/images/regions/minsk.jpg",
-    "crest": "/images/crests/minsk.png"
+    "crest": "/images/crests/minsk.png",
+    "description": "Центральный регион, ставший домом для самого большого озера страны — Нарочь. Живописные холмы здесь сменяются густыми лесами и чистыми реками."
   },
   {
     "name": "Гродненская область",
     "slug": "grodnenskaya-oblast",
     "image": "/images/regions/grodno.jpg",
-    "crest": "/images/crests/grodno.png"
+    "crest": "/images/crests/grodno.png",
+    "description": "Королевский регион, где на каждом шагу встречаются средневековые замки, дворцы и старинные костелы. Настоящая Европа в сердце Беларуси."
   },
   {
     "name": "Брестская область",
     "slug": "brestskaya-oblast",
     "image": "/images/regions/brest.jpg",
-    "crest": "/images/crests/brest.png"
+    "crest": "/images/crests/brest.png",
+    "description": "Знаменита древней Беловежской пущей, героической Брестской крепостью и живописными Полесскими болотами."
   },
   {
     "name": "Витебская область",
     "slug": "vitebskaya-oblast",
     "image": "/images/regions/vitebsk.jpg",
-    "crest": "/images/crests/vitebsk.png"
+    "crest": "/images/crests/vitebsk.png",
+    "description": "Край тысячи озер и родина Марка Шагала. Славится своими национальными парками, такими как Браславские озера."
   },
   {
     "name": "Гомельская область",
     "slug": "gomelskaya-oblast",
     "image": "/images/regions/gomel.jpg",
-    "crest": "/images/crests/gomel.png"
+    "crest": "/images/crests/gomel.png",
+    "description": "Сердце белорусского Полесья и долина могучей Припяти, которую называют 'белорусской Амазонкой'. Идеальное место для сплавов и наблюдения за дикой природой."
   },
   {
     "name": "Могилевская область",
     "slug": "mogilevskaya-oblast",
     "image": "/images/regions/mogilev.jpg",
-    "crest": "/images/crests/mogilev.png"
+    "crest": "/images/crests/mogilev.png",
+    "description": "Земля на берегах могучего Днепра, овеянная славой исторических сражений. Сегодня это край спокойных речных пейзажей и душевного агротуризма."
   }
 ]

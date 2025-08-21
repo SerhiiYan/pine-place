@@ -1,0 +1,416 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+// <!-- ЗАМЕТКА: Убедитесь, что пути к изображениям верные. -->
+const authorAvatar = "/images/about/author-avatar.webp";
+const missionBgImage = "/images/about/mission-photo.jpg"; // Пример: красивый пейзаж
+const ctaBgImage = "/images/about/cta-img.webp"; // Пример: уютный домик вечером
+const heroBgImage = "/images/about/principle-2-cozy.jpg"; 
+---
+
+<Layout 
+  title="О проекте Pine&Place | Наша философия тишины"
+  description="Pine&Place - это не просто каталог домиков. Это философия поиска тишины, уюта и связи с природой Беларуси."
+>
+
+  <!-- 1. НОВАЯ HERO-СЕКЦИЯ -->
+  <section class="hero-bg-image" style={`background-image: url(${heroBgImage});`}>
+    <div class="overlay"></div>
+    <div class="container narrow content">
+      <h1 class="hero-title">Место — твоей тишины</h1>
+      <p class="hero-text">
+        <strong>Pine&Place</strong> — это первая в Беларуси курируемая коллекция уникальных домиков для отдыха на природе. Мы не агрегатор сотен объявлений. Каждый объект в нашем каталоге отобран вручную и лично проверен нашей командой.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. СЕКЦИЯ "НАШИ ЦЕННОСТИ" -->
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Как мы отбираем места</h2>
+        <p>Каждый домик в нашей коллекции проходит три проверки, которые являются основой нашей философии.</p>
+      </div>
+      <div class="values-grid">
+        <!-- Ценность 1 -->
+        <div class="value-item">
+          <div class="value-icon">
+            <Icon name="mdi:cabin-a-frame" />
+          </div>
+          <h3>Уединение</h3>
+          <p>Никаких шумных баз отдыха. Мы ищем места, где вы сможете насладиться тишиной без посторонних глаз.</p>
+        </div>
+        <!-- Ценность 2 -->
+        <div class="value-item">
+          <div class="value-icon">
+            <Icon name="mdi:fireplace" />
+          </div>
+          <h3>Уют</h3>
+          <p>Для нас важны детали: от чистоты и удобной кровати до атмосферы, в которую хочется возвращаться.</p>
+        </div>
+        <!-- Ценность 3 -->
+        <div class="value-item">
+          <div class="value-icon">
+            <Icon name="mdi:pine-tree" />
+          </div>
+          <h3>Гармония с природой</h3>
+          <p>Мы выбираем локации, которые органично вписаны в ландшафт и позволяют почувствовать связь с природой.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 3. СЕКЦИЯ С ЦИТАТОЙ ОСНОВАТЕЛЯ -->
+  <section class="mission-quote-section" style={`background-image: url(${missionBgImage});`}>
+  <div class="overlay"></div>
+  <div class="container narrow content">
+    <figure class="quote-wrapper">
+      <blockquote>
+        “В Беларуси десятки потрясающих, уединенных мест, продуманных до мелочей. Но большинство из них теряются в ленте Instagram. Мы создали Pine&Place, чтобы исправить это.”
+      </blockquote>
+      
+      <!-- ИЗМЕНЕНИЯ ЗДЕСЬ: Новая подпись с логотипом -->
+      <figcaption class="quote-figcaption-brand">
+        <div class="quote-logo-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 154" aria-hidden="true">
+            <path fill="#fff" d="M50.49.14C40.3.87 32.65 4.14 25.6 8.29c-2.97 1.75-6.78 4.84-9.16 7.31l-3.94 4.09C-1.2 33.91 2.05 56.94 9.29 77.14c9.45 26.4 32.42 51.28 48.38 74.84 1.58 2.33 2.78 3.05 4.75.24 4.6-6.6 9.03-12.54 13.76-19.14C94.81 107.06 121.17 75.27 113 41.57c-6.08-25.07-30.31-43.25-56.98-41.35Z"/>
+            <path fill="#2C3E3A" transform="translate(4 0)" d="m52.52 52.6-11.62-11.47c-2.99-3.16-5.53-.2-1.59 3.42l4.44 4.33c2.02 2 1.8 1.41 4.39 4.38 1.04 1.19 2.92 3.47 4.29 4.34l.05 16.07c-1.68-.95-5.78-5.75-8.43-8.26-4.59-4.33-6.52-7.86-9.57-6.21-.29 2.18.04 2.56 1.19 3.61l15.43 14.92c1.92 2.35 1.38 2.97 1.39 7.47l.05 10.37c-2.05-1.04-2.85-3.13-5.05-5.09-2.81-2.5-6.7-7.35-10.09-10.37-1.88-1.68-2.73-4.8-5.84-3-.38 2.38.81 2.56 2.02 3.87 1.04 1.12 1.86 2.35 2.89 3.35l11.86 12.63c4.1 4.61 4.18.4 4.16 12.01-.01 1.69-.47 6.02.64 7 3.69 3.22 3.01-5.18 3.01-8.09l0-5.85c0-2.43.73-2.25 2.19-3.58 1.15-1.05 1.69-1.97 2.78-3.06l11.81-11.58c2.52-2.45 5.24-4.82 4.34-7-2.46-1-4.31 1.99-5.66 3.48-2.1 2.31-13.35 13.38-15.49 14.83l.04-12.83c0-5.56.76-3.76 7.83-10.73l7.18-7.08c.88-.86 1.33-1.6 2.26-2.5 2.24-2.18.39-4.99-2.9-2.17-2.86 2.45-11.92 12.49-14.43 14.26l.06-10.06c-.02-5.19-.88-5 1.89-7.9l9.8-9.95c3.35-3.16 4.39-3.85 3.67-6.01-3.26-1.1-6.26 4.3-9.55 7.07-2.82 2.38-4.21 4.56-5.85 5.25l-.03-27.96c.01-1.56.62-4.1-1.27-4.61-3.23-.87-2.31 4.56-2.34 9-.06 7.83.26 15.94.06 23.7Z"/>
+          </svg>
+        </div>
+        <!-- <span class="quote-author-text"></span> -->
+      </figcaption>
+
+    </figure>
+  </div>
+</section>
+
+  <!-- 4. СЕКЦИЯ FAQ (НОВЫЙ БЛОК) -->
+  <section class="faq-section">
+    <div class="container narrow">
+      <div class="section-header">
+        <h2>Часто задаваемые вопросы</h2>
+      </div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Как вы проверяете домики?</span>
+            <Icon name="mdi:chevron-down" class="faq-icon" />
+          </button>
+          <div class="faq-answer">
+            <p>Наша команда лично посещает каждую локацию. Мы проверяем чистоту, соответствие фотографий реальности, уровень комфорта и, самое главное, — действительно ли место является уединенным и тихим. Только после этого домик попадает в каталог.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Нужно ли платить за использование сайта?</span>
+            <Icon name="mdi:chevron-down" class="faq-icon" />
+          </button>
+          <div class="faq-answer">
+            <p>Наша миссия — помочь вам найти идеальное место. Все финансовые расчеты вы производите напрямую с владельцем, без каких-либо скрытых комиссий с нашей стороны.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Как я могу помочь проекту?</span>
+            <Icon name="mdi:chevron-down" class="faq-icon" />
+          </button>
+          <div class="faq-answer">
+            <p>Лучшая помощь — это информация! Если вы знаете об уникальном, тихом месте, которое подходит под нашу философию, или являетесь владельцем такого домика, пожалуйста, <a target="_blank" href="https://www.instagram.com/pine.and.place">напишите нам</a>. Мы будем рады открыть новые жемчужины Беларуси для всех.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 5. ФИНАЛЬНЫЙ ПРИЗЫВ К ДЕЙСТВИЮ (CTA) -->
+  <section class="cta-final-section" style={`background-image: url(${ctaBgImage});`}>
+    <div class="overlay"></div>
+    <div class="container content">
+      <h2>Осталось только выбрать</h2>
+      <a href="/regions" class="cta-animated-link">
+         Начать свое путешествие
+        <Icon name="mdi:arrow-right" class="arrow-icon"/>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+
+<script>
+  // Скрипт для работы FAQ-аккордеона
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+      // Закрываем все остальные открытые ответы
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          otherAnswer.style.maxHeight = null;
+        }
+      });
+      
+      // Открываем или закрываем текущий
+      item.classList.toggle('active');
+      if (item.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+</script>
+
+
+<style>
+  /* --- ОБЩИЕ СТИЛИ --- */
+  :root {
+    --brand-dark: #2C3E3A;
+    --brand-light: #fff;
+    --text-dark: #333;
+    --text-light: #6c757d;
+    --border-color: #e5e5e5;
+    --background-light: #f8f9fa;
+    --font-serif: 'Georgia', serif;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .container.narrow { max-width: 800px; }
+  section { padding: 5rem 0; overflow: hidden; }
+  .section-header { text-align: center; max-width: 650px; margin: 0 auto 3.5rem auto; }
+  .section-header h2 { font-size: 2.5rem; color: var(--brand-dark); font-weight: 700; margin-bottom: 1rem; }
+  .section-header p { font-size: 1.1rem; color: var(--text-light); line-height: 1.6; }
+  .btn { display: inline-block; text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; transition: all 0.2s ease; border: 1px solid transparent; }
+  .btn-primary { background-color: var(--brand-dark); color: var(--brand-light); }
+  .btn-primary:hover { background-color: #1f2c29; }
+  .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45); /* Немного настроил прозрачность для лучшего контраста */
+    z-index: 1;
+  }
+  .content { position: relative; z-index: 2; }
+
+
+  /* --- 1. НОВЫЙ HERO-БЛОК С ФОНОВЫМ ИЗОБРАЖЕНИЕМ --- */
+  .hero-bg-image {
+    position: relative;
+    padding: 6rem 0;
+    background-size: cover;
+    background-position: center;
+    color: var(--brand-light);
+    text-align: center;
+  }
+  .hero-title {
+  font-size: 3.8rem;
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  margin-bottom: 0; 
+  font-weight: 400;
+}
+.hero-title::after {
+  content: ''; 
+  display: block;
+  width: 125px; 
+  height: 2px;  
+  background-color: var(--brand-light); 
+  margin: 1.5rem auto; 
+}
+  .hero-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 650px; /* Ограничиваем ширину текста для лучшей читаемости */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-text strong {
+    color: var(--brand-light);
+  }
+
+  /* --- 2. VALUES SECTION --- */
+  .values-section {
+    background-color: var(--background-light);
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .value-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--brand-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  .value-icon {
+    font-size: 3rem;
+    color: var(--brand-dark);
+    display: inline-block;
+  }
+  .value-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+    margin-bottom: 0.75rem;
+  }
+  .value-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* --- 3. MISSION QUOTE SECTION --- */
+  .mission-quote-section {
+  position: relative;
+  padding: 7rem 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--brand-light);
+  text-align: center;
+}
+.quote-wrapper blockquote {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  line-height: 1.5;
+  margin: 0 auto 2.5rem auto; /* Увеличил нижний отступ */
+  max-width: 700px;
+  font-style: italic;
+}
+
+/* Новые стили для подписи */
+.quote-figcaption-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.quote-logo-wrapper {
+  width: 40px; /* Размер логотипа */
+  flex-shrink: 0;
+}
+.quote-author-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+  /* --- 4. FAQ SECTION --- */
+  .faq-accordion { border-top: 1px solid var(--border-color); }
+  .faq-item { border-bottom: 1px solid var(--border-color); }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+  }
+  .faq-question:hover { color: #000; }
+  .faq-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  .faq-item.active .faq-icon { transform: rotate(180deg); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .faq-answer p {
+    padding: 0 0 1.5rem 0;
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+  .faq-answer a { color: var(--brand-dark); font-weight: 600; }
+
+  /* --- 5. FINAL CTA SECTION --- */
+  .cta-final-section {
+    position: relative;
+    padding: 6rem 0;
+    text-align: center;
+    color: var(--brand-light);
+    background-size: cover;
+    background-position: center;
+  }
+  .cta-final-section h2 {
+    font-size: 2.8rem;
+    font-family: var(--font-serif);
+    margin-bottom: 3rem;
+    color: var(--brand-light);
+  }
+
+  .cta-animated-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--brand-light);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 8px; /* Место для линии */
+}
+.cta-animated-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--brand-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.cta-animated-link:hover::after {
+  transform: scaleX(1);
+}
+.cta-animated-link .arrow-icon {
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.cta-animated-link:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+  /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
+  @media (max-width: 900px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+    .mission-quote-section {
+      background-attachment: scroll;
+    }
+    .quote-wrapper blockquote {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    section { padding: 4rem 0; }
+    .section-header { margin-bottom: 2rem; }
+    .section-header h2 { font-size: 2rem; }
+    
+    .hero-bg-image { padding: 6rem 0; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-text { font-size: 1rem; }
+    
+    .cta-final-section h2 { font-size: 2.2rem; }
+  }
+</style>

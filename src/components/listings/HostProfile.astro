@@ -1,8 +1,12 @@
 ---
-const { host } = Astro.props;
+// Теперь мы импортируем наш новый справочник
+import allHosts from '@/data/hosts.json'; 
+
+const { hostId } = Astro.props; // Теперь компонент получает ID, а не объект
+
+const host = allHosts[hostId]; // Находим нужного хоста по ID
 if (!host) return null;
 ---
-
 <section class="host-section">
   <div class="host-profile">
     <img src={host.avatar} alt={`Фотография хозяина: ${host.name}`} class="host-avatar" />

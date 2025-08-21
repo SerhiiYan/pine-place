@@ -20,7 +20,9 @@ import {
   MdSailing,
   MdTune,
   MdCheck,
-  MdClose
+  MdClose,
+  MdPhoneInTalk,
+  MdOutlinePhoneInTalk
 } from 'react-icons/md';
 
 // --- ШАГ 2: СОЗДАЕМ "КАРТУ" ДЛЯ СОПОСТАВЛЕНИЯ СТРОК И КОМПОНЕНТОВ ---
@@ -42,7 +44,9 @@ const ICON_MAP = {
   'md:sailing': MdSailing,
   'md:tune': MdTune,
   'md:check': MdCheck,
-  'md:close': MdClose
+  'md:close': MdClose,
+  'md:phone-in-talk': MdPhoneInTalk,
+  'md:phone-outline': MdOutlinePhoneInTalk
 };
 
 const Icon = ({ name, size = '1em', color = 'currentColor', ...props }) => {
