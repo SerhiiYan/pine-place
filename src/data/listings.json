@@ -152,14 +152,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Витебская область",
     "type": "A-frame",
     "allowsPets": true,
@@ -267,8 +268,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Минская область",
     "type": "A-frame",
     "allowsPets": false,
@@ -376,8 +384,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Гродненская область",
     "type": "Barnhouse",
     "allowsPets": true,
@@ -485,8 +500,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Брестская область",
     "type": "Barnhouse",
     "allowsPets": true,
@@ -594,8 +616,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Брестская область",
     "type": "Хижина",
     "allowsPets": true,
@@ -703,8 +732,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Витебская область",
     "type": "A-frame",
     "allowsPets": true,
@@ -812,8 +848,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Минская область",
     "type": "Хижина",
     "allowsPets": true,
@@ -921,8 +964,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Брестская область",
     "type": "A-frame",
     "allowsPets": true,
@@ -1030,8 +1080,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Витебская область",
     "type": "Barnhouse",
     "allowsPets": true,
@@ -1139,8 +1196,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Брестская область",
     "type": "Barnhouse",
     "allowsPets": true,
@@ -1248,8 +1312,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Брестская область",
     "type": "Усадьба",
     "allowsPets": true,
@@ -1357,8 +1428,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Гродненская область",
     "type": "Barnhouse",
     "allowsPets": true,
@@ -1466,8 +1544,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Брестская область",
     "type": "A-frame",
     "allowsPets": true,
@@ -1575,8 +1660,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Гродненская область",
     "type": "Barnhouse",
     "allowsPets": true,
@@ -1684,8 +1776,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Гродненская область",
     "type": "Barnhouse",
     "allowsPets": true,
