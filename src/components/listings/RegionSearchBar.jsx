@@ -24,7 +24,7 @@ export default function RegionSearchBar({types}) {
   const debouncedSearchTerm = useDebounce(localSearchTerm, 300);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const amenitiesCount = $filters.activeAmenities.length;
   useEffect(() => {
     filters.setKey('searchTerm', debouncedSearchTerm);
   }, [debouncedSearchTerm]);
@@ -80,8 +80,15 @@ export default function RegionSearchBar({types}) {
             {types && types.map(type => <option key={type} value={type}>{type === 'Все' ? 'Тип жилья' : type}</option>)}
           </select>
           <button className="filters-btn" onClick={() => setIsModalOpen(true)}>
-            <Icon name="md:tune" />
-          </button>
+              <Icon name="md:tune" />
+              {/* 
+                Условно рендерим наш новый счетчик-кружок.
+                Он будет внутри кнопки, что необходимо для позиционирования.
+              */}
+              {amenitiesCount > 0 && (
+                <span className="filter-count-bubble">{amenitiesCount}</span>
+              )}
+            </button>
           {isFilterApplied && (
               <button className="reset-btn-main" onClick={handleReset} title="Сбросить фильтры">
                 <Icon name="md:close" />

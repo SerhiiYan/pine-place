@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// Импорты Swiper - теперь нам нужен модуль Autoplay
+// Импорты Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Zoom, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -26,10 +26,15 @@ export default function ImageGallery({ images }) {
   const openLightbox = (index) => setLightbox({ isOpen: true, index });
   const closeLightbox = () => setLightbox({ isOpen: false, index: 0 });
 
-  const mainImage = images[0];
-  const sideImages = images.slice(1, 4);
-  const lastVisibleImage = images[4];
-  const remainingCount = images.length > 5 ? images.length - 5 : 0;
+  // --- ГЛАВНОЕ ИСПРАВЛЕНИЕ ЗДЕСЬ ---
+  // Мы теперь работаем с массивом объектов, поэтому нужно извлекать свойство .src
+  const slides = images.map(imageObj => ({ src: imageObj.src }));
+  const totalImages = images.length;
+  
+  const mainImage = images[0]?.src;
+  const sideImages = images.slice(1, 4).map(img => img.src); 
+  const lastVisibleImage = images[4]?.src; 
+  const remainingCount = totalImages > 5 ? totalImages - 5 : 0;
 
   // --- РЕНДЕРИНГ КОМПОНЕНТА ---
   return (
@@ -38,22 +43,16 @@ export default function ImageGallery({ images }) {
         // === ВЕРСТКА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===
         <div className="mobile-swiper-container">
           <Swiper
-            // 1. Убираем Navigation, добавляем Autoplay
             modules={[Autoplay, Zoom]}
-            
-            // 2. Включаем и настраиваем автопрокрутку
-            autoplay={{
-              delay: 3000, // Пауза 3 секунды между слайдами
-              disableOnInteraction: false, // Автопрокрутка не остановится после ручного свайпа
-            }}
-            
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             zoom={true}
             loop={true}
           >
-            {images.map((image, index) => (
+            {/* Мы передаем в Swiper новый массив slides */}
+            {slides.map((slide, index) => (
               <SwiperSlide key={index} onClick={() => openLightbox(index)}>
                 <div className="swiper-zoom-container">
-                  <img src={image} alt={`Фото объекта ${index + 1}`} />
+                  <img src={slide.src} alt={`Фото объекта ${index + 1}`} />
                 </div>
               </SwiperSlide>
             ))}
@@ -63,11 +62,11 @@ export default function ImageGallery({ images }) {
         // === ВЕРСТКА ДЛЯ ДЕСКТОПНЫХ УСТРОЙСТВ ===
         <div className="gallery-collage">
           <div className="main-image" onClick={() => openLightbox(0)}>
-            <img src={mainImage} alt="Главное фото объекта" />
+            {mainImage && <img src={mainImage} alt="Главное фото объекта" />}
           </div>
-          {sideImages.map((image, index) => (
+          {sideImages.map((imageSrc, index) => (
             <div key={index} className={`side-image-${index + 1}`} onClick={() => openLightbox(index + 1)}>
-              <img src={image} alt={`Фото объекта ${index + 2}`} />
+              <img src={imageSrc} alt={`Фото объекта ${index + 2}`} />
             </div>
           ))}
           {lastVisibleImage && (
@@ -94,10 +93,10 @@ export default function ImageGallery({ images }) {
             centeredSlides={true}
             className="mySwiper"
           >
-            {images.map((image, index) => (
+            {slides.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="swiper-zoom-container">
-                  <img src={image} alt={`Фото объекта ${index + 1}`} />
+                  <img src={slide.src} alt={`Фото объекта ${index + 1}`} />
                 </div>
               </SwiperSlide>
             ))}

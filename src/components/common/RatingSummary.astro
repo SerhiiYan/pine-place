@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components';
+
+// showCount - новый пропс, который контролирует показ текста "(Х отзывов)"
+const { reviews, showCount = true } = Astro.props;
+
+if (!reviews?.overallRating) return null;
+---
+
+<div class="rating-summary-component">
+  <Icon name="mdi:star" />
+  <span class="rating-value">{reviews.overallRating.toFixed(2)}</span>
+  {showCount && reviews.totalCount > 0 && (
+    <span class="rating-count">({reviews.totalCount} отзывов)</span>
+  )}
+</div>
+
+<style>
+  .rating-summary-component {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+    color: #333;
+  }
+  .rating-summary-component [astro-icon] {
+    color: #f5b942; /* Золотой цвет для звезды */
+    font-size: 1.1em;
+  }
+  .rating-count {
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 0.9em;
+  }
+</style>

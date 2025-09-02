@@ -13,6 +13,7 @@ import Activities from '@/components/listings/Activities.astro';
 import HostProfile from '@/components/listings/HostProfile.astro';
 import allHosts from '@/data/hosts.json';
 import OtherListings from '@/components/listings/OtherListings.astro';
+import Location from '@/components/listings/Location.jsx';
 
 export function getStaticPaths() {
   return allListings.map(listing => ({
@@ -22,6 +23,7 @@ export function getStaticPaths() {
 }
 
 const { listing } = Astro.props;
+const yandexApiKey = import.meta.env.PUBLIC_YANDEX_MAPS_API_KEY;
 
 // --- НОВАЯ ЛОГИКА: Находим другие домики этого же хоста ---
 const otherListings = allListings.filter(
@@ -51,7 +53,6 @@ const breadcrumbs = [
       </a>
       <h1>{listing.name}</h1>
       <p class="summary">{listing.summary}</p>
-      <span class="location">{listing.location}</span>
     </header>
 
     <ImageGallery images={listing.images} client:load />
@@ -66,10 +67,11 @@ const breadcrumbs = [
         <Amenities amenities={listing.amenities} client:load />
         <Conditions conditions={listing.conditions} />
         <Activities activities={listing.activities} />
+        <Location listing={listing} apiKey={yandexApiKey} client:visible />
         <HostProfile hostId={listing.hostId} />
       </div>
       <aside class="sidebar">
-        <BookingWidget listing={listing} />
+        <BookingWidget listing={listing} host={host} />
       </aside>
     </div>
     <OtherListings listings={otherListings} host={host} />
@@ -149,6 +151,61 @@ const breadcrumbs = [
   :global(.category-group ul) { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   :global(.category-group li) { display: flex; align-items: center; gap: 0.75rem; }
 
+   /* Стили для секции с картой */
+  :global(.location-section) {
+    margin-top: 2rem;
+  }
+  :global(.location-section h2) {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+  }
+  :global(.location-info) {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  :global(.location-info .separator) {
+    margin: 0 0.5rem;
+    color: #6c757d;
+  }
+
+  /* Стили для модального окна с картой */
+  :global(.map-modal-backdrop) {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :global(.map-modal-content) {
+    background: #f8f9fa;
+    border-radius: 12px;
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  }
+  :global(.map-modal-content .modal-close-btn) {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 10;
+    font-size: 2rem;
+    line-height: 1;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    padding-bottom: 4px;
+  }
 
   /* --- МОБИЛЬНАЯ АДАПТАЦИЯ (max-width: 800px) --- */
   @media (max-width: 800px) {
@@ -198,6 +255,10 @@ const breadcrumbs = [
 
     :global(.amenities-preview-grid) {
       grid-template-columns: 1fr; /* Сетка удобств в одну колонку */
+    }
+
+    :global(.location-section h2) {
+      font-size: 1.3rem;
     }
   }
 </style>

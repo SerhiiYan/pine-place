@@ -1,5 +1,6 @@
 ---
 // Вся логика теперь будет в теге <script>
+import FavoriteCounter from '@/components/layout/FavoriteCounter.jsx';
 ---
 <header class="site-header">
   <div class="container">
@@ -36,7 +37,10 @@
       </nav>
       <div class="header-right">
         <a href="/list-your-property" class="btn btn-secondary">Разместить объект</a>
-        <a href="/login" class="btn btn-primary">Войти</a>
+        <div class="desktop-buttons">
+          <FavoriteCounter client:load /> {/* <-- НАШ НОВЫЙ КОМПОНЕНТ */}
+          <a href="/login" class="btn btn-primary">Войти</a>
+        </div>
       </div>
     </div>
   </div>
@@ -78,6 +82,90 @@
   .btn-primary:hover { background-color: #1f2c29; }
   .btn-secondary { background-color: transparent; color: #333; border: 1px solid #e5e5e5; }
   .btn-secondary:hover { background-color: #f8f9fa; border-color: #ccc; }
+  /* --- ДОБАВЬТЕ ЭТИ СТИЛИ В КОНЕЦ ДЕСКТОПНОЙ ЧАСТИ --- */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .desktop-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  :global(.favorite-counter) {
+    color: #333;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  :global(.favorite-counter:hover) {
+    color: #2C3E3A;
+  }
+  :global(.count-bubble) {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #E53935;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Немного увеличим отступ, чтобы было место */
+  }
+
+  .desktop-buttons {
+    display: flex; /* Выстраиваем "Избранное" и "Войти" в ряд */
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* Контейнер для иконки избранного. Он будет relative */
+  :global(.favorite-counter) {
+    color: #333;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  :global(.favorite-counter:hover) {
+    color: #2C3E3A;
+  }
+
+  /* 
+    АБСОЛЮТНОЕ ПОЗИЦИОНИРОВАНИЕ! 
+    Это решение проблемы "сдвига". Кружок позиционируется
+    относительно иконки и не занимает места в потоке.
+  */
+  :global(.count-bubble) {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #E53935; /* Яркий красный цвет */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white; /* Маленькая белая обводка для красоты */
+  }
 
   /* Скрываем бургер на десктопе */
   .mobile-nav-toggle { display: none; }
@@ -157,6 +245,9 @@
     }
     .site-header.is-menu-open .hamburger-icon::after {
       transform: translateY(-8px) rotate(-45deg);
+    }
+    .desktop-buttons {
+      display: none;
     }
   }
 </style>

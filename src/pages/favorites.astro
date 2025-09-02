@@ -1,0 +1,58 @@
+---
+// src/pages/favorites.astro
+import Layout from '@/layouts/Layout.astro';
+import FavoritesGrid from '@/components/listings/FavoritesGrid.jsx';
+import allListings from '@/data/listings.json';
+---
+
+<Layout title="Избранное | Pine&Place">
+  <div class="page-container">
+    <header class="page-header">
+      <h1>Избранное</h1>
+      <p>Здесь собраны места, которые вам понравились. Эта коллекция хранится только в вашем браузере.</p>
+    </header>
+    
+    <FavoritesGrid allListings={allListings} client:visible />
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+  .page-header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+  }
+
+  /* Глобальные стили для сетки и карточек можно будет взять 
+     из index.astro или [region].astro для консистентности */
+  :global(.listings-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  :global(.no-results-placeholder) {
+    grid-column: 1 / -1; /* Растягиваем на всю ширину сетки */
+    text-align: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+  }
+  :global(.no-results-placeholder h3) {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  :global(.no-results-placeholder p) {
+    color: #6c757d;
+  }
+</style>

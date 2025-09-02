@@ -1,38 +1,18 @@
 {
-  "host_001": {
-    "name": "Екатерина и Донатас",
-    "avatar": "/images/hosts/test.png",
-    "joined": 2018,
-    "bio": "Мы влюблены в Браславские озера и хотим делиться этой любовью с нашими гостями."
-  },
-  "host_002": {
-    "name": "Андрей",
-    "avatar": "/images/hosts/test.png",
-    "joined": 2020,
-    "bio": "Создаю современные домики для тех, кто ценит дизайн и уединение."
-  },
-  "host_003": {
-    "name": "Владимир",
-    "avatar": "/images/hosts/test.png",
-    "joined": 2020,
-    "bio": "Создаю современные домики для тех, кто ценит дизайн и уединение."
-  },
-  "host_004": {
-    "name": "Юля",
-    "avatar": "/images/hosts/test.png",
-    "joined": 2020,
-    "bio": "Создаю современные домики для тех, кто ценит дизайн и уединение."
-  },
-  "host_005": {
-    "name": "Олег",
-    "avatar": "/images/hosts/test.png",
-    "joined": 2020,
-    "bio": "Создаю современные домики для тех, кто ценит дизайн и уединение."
-  },
-  "host_006": {
-    "name": "Дмитрий",
-    "avatar": "/images/hosts/test.png",
-    "joined": 2020,
-    "bio": "Создаю современные домики для тех, кто ценит дизайн и уединение."
+"host_001": {
+  "name": "Екатерина и Донатас",
+  "avatar": "/images/hosts/test.png",
+  "joined": 2018,
+  "bio": "Мы влюблены в Браславские озера и хотим делиться этой любовью с нашими гостями.",
+  "contacts": [
+    { "type": "phone", "value": "+375291234567", "label": "Позвонить" },
+    { "type": "instagram", "value": "https://instagram.com/cozy_hut", "label": "Написать в Instagram" },
+    { "type": "telegram", "value": "https://t.me/cozy_hut_owner", "label": "Написать в Telegram" }
+  ],
+  "subscription": {
+    "plan": "premium_yearly",
+    "status": "active", 
+    "expires_at": "2026-08-27T10:00:00Z"
+   }
   }
 }

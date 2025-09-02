@@ -22,12 +22,19 @@ import {
   MdCheck,
   MdClose,
   MdPhoneInTalk,
-  MdOutlinePhoneInTalk
+  MdOutlinePhoneInTalk,
+  MdVerified,
+  MdAutoAwesome,
+  MdMap,
+  MdFavoriteBorder 
 } from 'react-icons/md';
 
 // --- ШАГ 2: СОЗДАЕМ "КАРТУ" ДЛЯ СОПОСТАВЛЕНИЯ СТРОК И КОМПОНЕНТОВ ---
 const ICON_MAP = {
+  'md:favoriteBorder': MdFavoriteBorder, 
   'md:wifi': MdWifi,
+  'md:verified': MdVerified, 
+  'md:autoAwesome': MdAutoAwesome, 
   'md:local-parking': MdLocalParking,
   'md:fireplace': MdFireplace,
   'md:MdOutlineFireplace': MdOutlineFireplace,
@@ -45,6 +52,7 @@ const ICON_MAP = {
   'md:tune': MdTune,
   'md:check': MdCheck,
   'md:close': MdClose,
+  'md:map': MdMap,
   'md:phone-in-talk': MdPhoneInTalk,
   'md:phone-outline': MdOutlinePhoneInTalk
 };

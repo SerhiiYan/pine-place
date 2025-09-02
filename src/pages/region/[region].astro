@@ -204,6 +204,7 @@ const breadcrumbs = [
   }
 
   :global(.filters-btn) {
+    position: relative;
     background: #f8f9fa;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -215,6 +216,25 @@ const breadcrumbs = [
     font-size: 1.5rem;
     color: #333;
   }
+
+  :global(.filter-count-bubble) {
+    position: absolute; 
+    top: -4px;
+    right: -4px;
+    background-color: #2C3E3A; 
+    color: white;
+    font-size: 0.7rem; 
+    font-weight: 600;
+    width: 18px;      
+    height: 18px;     
+    border-radius: 50%; 
+    border: 1px solid white; 
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   :global(.filters-btn:hover) {
     background-color: #e9ecef;
   }

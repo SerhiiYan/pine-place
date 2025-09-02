@@ -3,6 +3,14 @@
     "slug": "cozy-hut-braslav",
     "name": "Уютная хижина на Браславах",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "premium",
+    "badges": [
+      { "type": "recommended", "label": "Pine&Place", "icon": "md:verified" },
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Идеальное место для двоих с панорамным видом на озеро.",
     "reviews": {
     "overallRating": 4.91,
@@ -28,14 +36,15 @@
   },
     "mainImage": "/images/test.jpg",
     "images": [
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg",
-      "/images/test.jpg"
-    ],
+    { "src": "/images/test.jpg", "width": 1920, "height": 1080 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 },
+    { "src": "/images/test.jpg", "width": 1080, "height": 1920 }
+  ],
     "region": "Витебская область",
     "type": "Хижина",
     "allowsPets": true,
@@ -50,10 +59,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "firezone"]
   },
     "coordinates": { "latitude": 55.633, "longitude": 27.051 },
-    "contacts": { 
-      "phone": "+375291234567", 
-      "instagram": "https://instagram.com/cozy_hut" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -115,6 +120,13 @@
     "slug": "cozy-hut-braslav-lake",
     "name": "Уютный а-фрейм на Браславских озерах",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Идеальное место для двоих с панорамным видом на озеро.",
     "reviews": {
     "overallRating": 4.91,
@@ -162,10 +174,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "firezone"]
   },
     "coordinates": { "latitude": 55.633, "longitude": 27.051 },
-    "contacts": { 
-      "phone": "+375291234567", 
-      "instagram": "https://instagram.com/cozy_hut" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -227,6 +235,13 @@
     "slug": "forest-a-frame-minsk",
     "name": "Лесной A-frame под Минском",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный A-frame в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -268,10 +283,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -333,6 +344,13 @@
     "slug": "forest-barnhouse-grodno",
     "name": "Лесной Barnhouse под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "basic",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -374,10 +392,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -439,6 +453,13 @@
     "slug": "forest-house-grodno",
     "name": "Лесной house под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "premium",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -480,10 +501,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -545,6 +562,13 @@
     "slug": "lake-house-brest",
     "name": "Лесной house под Брестом",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "basic",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный А фрейм в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -586,10 +610,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -651,6 +671,13 @@
     "slug": "forest-house-vitebsk",
     "name": "Дом у реки под Витебском",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный а фрейм у реки для отдыха от города.",
     "reviews": {
     "overallRating": 4.51,
@@ -692,10 +719,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -757,6 +780,13 @@
     "slug": "cozy-hut-minsk",
     "name": "Домик у сосны под Минском",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный домик в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -798,10 +828,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -863,6 +889,13 @@
     "slug": "forest-house-asdfggsd",
     "name": "Лесной house под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -904,10 +937,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -969,6 +998,13 @@
     "slug": "forest-house-asdfxno",
     "name": "Лесной house ",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -1010,10 +1046,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -1075,6 +1107,13 @@
     "slug": "forest-housec-axasd",
     "name": "Лесной house под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -1116,10 +1155,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -1181,6 +1216,13 @@
     "slug": "forest-house-opnaa",
     "name": "дом под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -1222,10 +1264,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -1287,6 +1325,13 @@
     "slug": "forest-house-docs",
     "name": "Лесной house под окном",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -1328,10 +1373,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -1393,6 +1434,13 @@
     "slug": "forest-house-fhgf",
     "name": "Лесной house под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -1434,10 +1482,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -1499,6 +1543,13 @@
     "slug": "forest-house-gwqdsa",
     "name": "Лесной house под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -1540,10 +1591,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],
@@ -1605,6 +1652,13 @@
     "slug": "forest-house-fano",
     "name": "Лесной house под Гродно",
     "status": "active",
+    "createdAt": "2024-08-27T10:00:00Z",
+    "updatedAt": "2024-08-27T10:00:00Z",
+    "listingTier": "free",
+    "badges": [
+      { "type": "new", "label": "Новинка", "icon": "md:autoAwesome" }
+    ],
+    "internalNotes": "Очень адекватная хозяйка, быстро отвечает. Фотографии нужно будет обновить осенью.",
     "summary": "Современный Barnhouse в сосновом лесу для отдыха от города.",
     "reviews": {
     "overallRating": 4.91,
@@ -1646,10 +1700,6 @@
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
   },
     "coordinates": { "latitude": 54.12, "longitude": 27.85 },
-    "contacts": { 
-      "phone": "+375447654321", 
-      "instagram": "https://instagram.com/forest_frame" 
-    },
     "activities": {
       "title": "Чем заняться поблизости",
       "list": ["swimming", "fishing", "kayaking", "biking"],

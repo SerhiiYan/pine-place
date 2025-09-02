@@ -1,0 +1,55 @@
+---
+import RatingSummary from '@/components/common/RatingSummary.astro'; // 1. Импортируем новый компонент
+
+const { listing } = Astro.props;
+const reviews = listing.reviews;
+---
+
+<section class="reviews-section">
+  <h2>Отзывы</h2>
+  
+  {reviews && reviews.totalCount > 0 ? (
+    <div class="reviews-summary-header">
+      <RatingSummary reviews={reviews} showCount={true} />
+    </div>
+  ) : (
+    <p class="no-reviews-placeholder">Для этого домика пока нет отзывов.</p>
+  )}
+
+  <!-- В будущем здесь будет список комментариев -->
+</section>
+
+<style>
+  .reviews-section {
+    margin-top: 2rem;
+  }
+  .reviews-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Стили, перенесенные из BookingWidget */
+  .rating-summary {
+    font-size: 1.1rem; /* Сделаем чуть крупнее */
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .no-reviews-placeholder {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    color: #6c757d;
+  }
+
+  @media (max-width: 800px) {
+    .reviews-section h2 {
+      font-size: 1.3rem;
+    }
+  }
+</style>

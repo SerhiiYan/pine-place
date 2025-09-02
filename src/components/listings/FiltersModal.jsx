@@ -78,6 +78,8 @@ export default function FiltersModal({ onClose }) {
           </button>
         </div>
       </div>
+      
     </div>
+    
   );
 }
