@@ -24,6 +24,7 @@ export function getStaticPaths() {
 
 const { listing } = Astro.props;
 const yandexApiKey = import.meta.env.PUBLIC_YANDEX_MAPS_API_KEY;
+console.log(`Ключ Яндекс.Карт на Vercel: ${yandexApiKey}`);
 
 // --- НОВАЯ ЛОГИКА: Находим другие домики этого же хоста ---
 const otherListings = allListings.filter(
