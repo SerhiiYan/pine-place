@@ -1,0 +1,40 @@
+---
+// src/pages/partners.astro
+import Layout from '@/layouts/Layout.astro';
+import TariffSelector from '@/components/partners/TariffSelector.jsx';
+import PartnerIntro from '@/components/partners/PartnerIntro.jsx';
+---
+
+<Layout title="Партнерам | Pine&Place">
+  <div class="page-container">
+    {/* Блок с текстом теперь находится сверху и по центру */}
+    <div class="intro-section">
+      <PartnerIntro client:load />
+    </div>
+
+    {/* Виджет с тарифами идет следующим, под текстом */}
+    <div class="tariffs-section">
+      <TariffSelector client:load />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    /* Увеличим отступы на мобильных, чтобы карточки не прилипали к краям */
+    padding: 0 2rem; 
+  }
+  .intro-section {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+  }
+  
+  @media(max-width: 600px) {
+    .page-container {
+        padding: 0 1.5rem; /* На совсем маленьких экранах вернем стандартный отступ */
+    }
+  }
+</style>

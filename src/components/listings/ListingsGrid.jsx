@@ -1,3 +1,5 @@
+// src/components/listings/ListingsGrid.jsx
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { useStore } from '@nanostores/react';
 import { filters } from '@/stores/filters.js';
@@ -11,6 +13,20 @@ const TIER_WEIGHTS = {
   basic: 2,
   free: 1,
   default: 1
+};
+
+// --- НОВАЯ ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ---
+// Она создает "псевдослучайное" число из строки (например, slug'а).
+// Это гарантирует, что для одного и того же домика "случайный" ранг
+// будет всегда одинаковым, и на сервере, и в браузере.
+const getDeterministicRandom = (str) => {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash |= 0; // Преобразуем в 32-битное целое число
+  }
+  return hash;
 };
 
 export default function ListingsGrid({ allListings }) {
@@ -48,8 +64,8 @@ export default function ListingsGrid({ allListings }) {
         return weightB - weightA;
       }
       
-      // Если тарифы одинаковые, перемешиваем случайно
-      return Math.random() - 0.5;
+      // Если тарифы одинаковые, используем наше "стабильное" перемешивание
+      return getDeterministicRandom(a.slug) - getDeterministicRandom(b.slug);
     });
 
     return results;

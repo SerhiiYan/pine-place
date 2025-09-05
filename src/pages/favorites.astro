@@ -2,6 +2,7 @@
 // src/pages/favorites.astro
 import Layout from '@/layouts/Layout.astro';
 import FavoritesGrid from '@/components/listings/FavoritesGrid.jsx';
+import FavoritesActions from '@/components/listings/FavoritesActions.jsx'; // 1. Импортируем новый компонент
 import allListings from '@/data/listings.json';
 ---
 
@@ -9,7 +10,8 @@ import allListings from '@/data/listings.json';
   <div class="page-container">
     <header class="page-header">
       <h1>Избранное</h1>
-      <p>Здесь собраны места, которые вам понравились. Эта коллекция хранится только в вашем браузере.</p>
+      {/* 2. Добавляем наш React-компонент с директивой client:load */}
+      <FavoritesActions allListings={allListings} client:load />
     </header>
     
     <FavoritesGrid allListings={allListings} client:visible />
@@ -19,30 +21,30 @@ import allListings from '@/data/listings.json';
 <style>
   .page-container {
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 4rem auto;
     padding: 0 1.5rem;
   }
   .page-header {
-    text-align: center;
-    margin-bottom: 3rem;
+    /* 3. Превращаем хедер в flex-контейнер */
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
   }
   .page-header h1 {
     font-size: 2.5rem;
+    margin: 0;
   }
-  .page-header p {
-    font-size: 1.1rem;
-    color: #6c757d;
-  }
-
-  /* Глобальные стили для сетки и карточек можно будет взять 
-     из index.astro или [region].astro для консистентности */
+  
+  /* Стили для сетки и заглушки остаются те же */
   :global(.listings-grid) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
   }
   :global(.no-results-placeholder) {
-    grid-column: 1 / -1; /* Растягиваем на всю ширину сетки */
+    grid-column: 1 / -1;
     text-align: center;
     padding: 3rem;
     background-color: #f8f9fa;
