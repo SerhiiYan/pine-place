@@ -3,19 +3,24 @@
 import Layout from '@/layouts/Layout.astro';
 import TariffSelector from '@/components/partners/TariffSelector.jsx';
 import PartnerIntro from '@/components/partners/PartnerIntro.jsx';
+import PartnersFaq from '@/components/partners/PartnersFaq.jsx'; 
 ---
 
 <Layout title="Партнерам | Pine&Place">
   <div class="page-container">
     {/* Блок с текстом теперь находится сверху и по центру */}
-    <div class="intro-section">
+    <section class="intro-section">
       <PartnerIntro client:load />
-    </div>
+    </section>
 
     {/* Виджет с тарифами идет следующим, под текстом */}
-    <div class="tariffs-section">
+    <section class="tariffs-section">
       <TariffSelector client:load />
-    </div>
+    </section>
+    <section class="faq-container-section">
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <PartnersFaq client:load />
+    </section>
   </div>
 </Layout>
 
@@ -30,6 +35,20 @@ import PartnerIntro from '@/components/partners/PartnerIntro.jsx';
     max-width: 800px;
     margin: 0 auto 4rem auto;
     text-align: center;
+  }
+
+  /* 3. Добавляем стили для новой секции */
+  .faq-container-section {
+    padding-top: 4rem; /* Отступ сверху */
+    margin-top: 4rem; /* Отступ от тарифов */
+    border-top: 1px solid #e9ecef; /* Красивый разделитель */
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: var(--font-serif, 'Georgia', serif);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
   }
   
   @media(max-width: 600px) {

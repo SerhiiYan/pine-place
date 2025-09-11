@@ -12,8 +12,9 @@
   "basic": {
     "name": "Basic",
     "plans": {
-      "3": { "price": 60, "pricePerMonth": 20 },
-      "12": { "price": 240, "pricePerMonth": 20 }
+      "3": { "price": 60, "pricePerMonth": 20, "price_id": "basic_3_months" },
+      "6": { "price": 120, "pricePerMonth": 20, "price_id": "basic_6_months" },
+      "12": { "price": 240, "pricePerMonth": 20, "price_id": "basic_12_months" }
     },
     "features": [
       "Все возможности тарифа Free",
@@ -25,8 +26,9 @@
   "premium": {
     "name": "Premium",
     "plans": {
-      "3": { "price": 120, "pricePerMonth": 40 },
-      "12": { "price": 400, "pricePerMonth": 33 }
+      "3": { "price": 120, "pricePerMonth": 40, "price_id": "premium_3_months" },
+      "6": { "price": 220, "pricePerMonth": 37, "discount": "экономия ~8%", "price_id": "premium_6_months" },
+      "12": { "price": 400, "pricePerMonth": 33, "discount": "экономия ~17%", "price_id": "premium_12_months" }
     },
     "features": [
       "Все возможности тарифа Basic",

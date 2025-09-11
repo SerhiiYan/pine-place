@@ -2,298 +2,257 @@
 import Layout from '@/layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 
-// --- ШАГ 1: ПОДГОТОВЬТЕ ИЗОБРАЖЕНИЯ ---
-// Положите в /public/images/about/ несколько вдохновляющих фото
-const authorImage = "/images/about/author-avatar.webp"; // Ваше дружелюбное фото
-const ctaImage = "/images/about/cta-background.webp"; // Фото с видом из окна на закат
+const detailImage1 = "/images/about/detail-1.jpg"; 
+const detailImage2 = "/images/about/detail-2.jpg"; 
+const detailImage3 = "/images/about/detail-3.jpg";
+const detailImage4 = "/images/about/detail-4.jpg";
+const authorImage = "/images/about/author-avatar.webp";
 ---
 
 <Layout 
-  title="Наша история | Философия Pine&Place"
-  description="Мы верим, что в мире шума тишина — это потребность. Узнайте, как мы ищем и отбираем лучшие уединенные места Беларуси."
+  title="Наша философия | Pine&Place"
+  description="Мы создаем первый в Беларуси доверенный стандарт для качественного отдыха на природе. Узнайте о нашем подходе и планах на будущее."
 >
 
-  <!-- РАЗДЕЛ 1: ХУК -->
-  <section class="story-hero">
-    <div class="story-hero-background"></div>
-    <div class="container">
-      <div class="story-content-panel">
-        <div class="story-header">
-          <h1 class="story-title">Место твоей тишины</h1>
-          <p class="story-subtitle">Это не просто слоган, а обещание. Каждое место в нашей коллекции отвечает трем простым, но важным принципам:</p>
-        </div>
-        <div class="principles-grid">
-          <div class="principle-item">
-            <div class="principle-icon"><Icon name="mdi:pine-tree-variant-outline" /></div>
-            <h3>Уединение</h3>
-            <p>Никаких шумных баз отдыха. Мы ищем места, где вы сможете насладиться тишиной без посторонних глаз.</p>
-          </div>
-          <div class="principle-item">
-            <div class="principle-icon"><Icon name="mdi:fireplace" /></div>
-            <h3>Уют</h3>
-            <p>Для нас важны детали: от чистоты и удобной кровати до атмосферы, в которую хочется возвращаться.</p>
-          </div>
-          <div class="principle-item">
-            <div class="principle-icon"><Icon name="mdi:leaf-maple" /></div>
-            <h3>Гармония с природой</h3>
-            <p>Мы выбираем локации, которые органично вписаны в ландшафт и позволяют почувствовать связь с природой.</p>
-          </div>
-        </div>
+  <!-- БЛОК 1: ДВА МИРА -->
+  <section class="two-worlds-section">
+    <div class="world chaos-world">
+      <div class="world-content">
+        <h2>Хаос</h2>
+        <p>Сотни объявлений. Неактуальные календари. Фотографии, которые не соответствуют реальности. Бесконечный скроллинг в поисках чего-то настоящего.</p>
+      </div>
+    </div>
+    <div class="world curated-world">
+      <div class="world-content">
+        <h2>Кураторство</h2>
+        <p>Тщательный отбор. Прямая связь с хозяевами, которые разделяют наши ценности. Фокус на качестве, а не на количестве.</p>
       </div>
     </div>
   </section>
 
-  <!-- РАЗДЕЛ 3: ПРОЦЕСС ОТБОРА -->
-  <section class="process-section">
-    <div class="container">
-      <h2 class="section-title text-center">Как место попадает в каталог</h2>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="process-icon"><Icon name="mdi:map-search-outline" /></div>
-          <h3>Поиск и исследование</h3>
-          <p>Мы постоянно ищем новые места через рекомендации, социальные сети и личные путешествия.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-icon"><Icon name="mdi:home-heart" /></div>
-          <h3>Личный визит</h3>
-          <p>Наша команда лично посещает каждую локацию, чтобы убедиться, что фотографии соответствуют реальности.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-icon"><Icon name="mdi:shield-check-outline" /></div>
-          <h3>Проверка по чек-листу</h3>
-          <p>Мы оцениваем все: от чистоты и уединенности до качества матраса и наличия дров для камина.</p>
-        </div>
+  <!-- БЛОК 2: НАШ ПОДХОД -->
+  <section class="approach-section">
+    <div class="container approach-grid">
+      <div class="approach-text">
+        <h2 class="section-title">Мы — ваш первый фильтр</h2>
+        <p>Мы создали Pine&Place, потому что сами устали от информационного шума. Наша цель — не собрать все доступные домики Беларуси, а создать коллекцию мест с особым характером.</p>
+        <p>Мы отдаем предпочтение уединенным локациям, продуманному дизайну и хозяевам, которые по-настоящему влюблены в свое дело. Мы не можем лично посетить каждое место прямо сейчас, но мы тщательно изучаем каждое объявление, общаемся с владельцами и ориентируемся на отзывы из открытых источников, чтобы сформировать каталог, которому можно доверять.</p>
+      </div>
+      <div class="approach-images">
+        <img src={detailImage1} alt="Деталь интерьера уютного домика" class="detail-img-1" />
+        <img src={detailImage2} alt="Дрова, сложенные у камина" class="detail-img-2" />
+        <img src={detailImage3} alt="Ключ в двери домика" class="detail-img-3" />
+        <img src={detailImage4} alt="Одинокое кресло на природе" class="detail-img-4" />
       </div>
     </div>
   </section>
-  
-  {/* --- НОВЫЙ БЛОК 4: ЗАПИСКА ОТ ОСНОВАТЕЛЯ (Личная записка) --- */}
-<section class="founder-section">
-    <div class="container founder-container">
+
+  <!-- БЛОК 3: ДОРОЖНАЯ КАРТА -->
+  <section class="roadmap-section">
+    <div class="container">
+      <h2 class="section-title text-center">Куда мы идем</h2>
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <span class="roadmap-number-bg">01</span>
+          <h3>Сейчас: Доверенная коллекция</h3>
+          <p>Мы создали и постоянно пополняем каталог проверенных и отобранных вручную мест.</p>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-number-bg">02</span>
+          <h3>Скоро: Система отзывов</h3>
+          <p>Мы запускаем систему честных отзывов от реальных гостей, чтобы вы могли принимать решения, основываясь на опыте сообщества.</p>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-number-bg">03</span>
+          <h3>В планах: Единая экосистема</h3>
+          <p>Наша конечная цель — создать удобную платформу, которая объединит все этапы планирования отдыха: от поиска до бронирования.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- БЛОК 4: ОСНОВАТЕЛЬ И ПРИГЛАШЕНИЕ -->
+  <section class="founder-section">
+    <div class="container founder-content">
       <blockquote class="founder-quote">
-        “Я создал Pine&Place, потому что сам устал часами просеивать сотни однотипных объявлений в поисках чего-то действительно особенного. Я верю, что в Беларуси есть десятки скрытых жемчужин, и моя миссия — собрать их в одном месте и поделиться с вами. Спасибо, что вы здесь.”
+        “Я верю, что будущее — за честными и качественными сервисами. Pine&Place — это мой вклад в развитие культуры отдыха в Беларуси.”
       </blockquote>
       <figcaption class="founder-attribution">
-        <img src={authorImage} alt="Фото основателя проекта" class="founder-avatar"/>
+        <img src={authorImage} alt="Фото основателя" class="founder-avatar"/>
         <div class="founder-info">
           <p class="founder-name">Serhii</p>
           <p class="founder-title">Основатель Pine&Place</p>
         </div>
       </figcaption>
+      <div class="founder-cta">
+        <p>Знаете место, которое подходит нашей философии, или хотите присоединиться к коллекции? Напишите нам.</p>
+        <a href="https://www.instagram.com/pine.and.place" target="_blank" class="cta-button">Связаться с нами</a>
+      </div>
     </div>
 </section>
-  
-  <!-- РАЗДЕЛ 5: ПРИГЛАШЕНИЕ К УЧАСТИЮ (CTA) -->
-  <section class="cta-section" style={`background-image: url(${ctaImage})`}>
-    <div class="overlay"></div>
-    <div class="container content">
-      <h2 class="section-title">Знаете такое место?</h2>
-      <p class="section-intro">
-        Наша коллекция постоянно растет благодаря вам. Если вы владелец уединенного домика или знаете о таком месте, которое соответствует нашей философии — пожалуйста, напишите нам. Давайте вместе открывать лучшие уголки Беларуси.
-      </p>
-      <a href="https://www.instagram.com/pine.and.place" target="_blank" class="cta-button">
-        Предложить место
-      </a>
-    </div>
-  </section>
+
 </Layout>
 
 <style>
-  /* --- ОБЩИЕ ПЕРЕМЕННЫЕ И СТИЛИ --- */
   :root {
     --brand-dark: #2C3E3A;
     --text-dark: #333;
     --text-light: #6c757d;
     --background-light: #f8f9fa;
-    --font-serif: 'Georgia', serif; /* Используем Georgia как запасной вариант, если Montserrat не загрузится */
-    --font-main: 'Montserrat', sans-serif;
+    --font-serif: 'Georgia', serif;
   }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-  .section-title { font-family: var(--font-main); font-size: 2.2rem; font-weight: 700; color: var(--brand-dark); margin-bottom: 1rem; }
-  .section-intro { font-size: 1.1rem; color: var(--text-light); line-height: 1.7; }
+  .section-title { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; color: var(--brand-dark); margin-bottom: 1.5rem; }
   .text-center { text-align: center; }
 
-  /* --- СЕКЦИЯ 1: HOOK --- */
-  .story-hero {
-  position: relative;
-  padding: 6rem 0;
-  background-color: var(--background-light); /* Светлый фон по умолчанию */
-  overflow: hidden;
-}
+  /* --- БЛОК 1: ДВА МИРА --- */
+  .two-worlds-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 60vh;
+  }
+  .world { padding: 4rem; display: flex; align-items: center; justify-content: center; }
+  .world-content { max-width: 400px; }
+  .world h2 { font-size: 2rem; font-family: var(--font-serif); margin-bottom: 1rem; }
+  .world p { line-height: 1.7; font-size: 1.1rem; }
 
-.story-hero-background {
-  position: absolute;
-  inset: 0;
-  background-image: url('/images/about/mission-photo.jpg'); /* <-- ВАШЕ КРАСИВОЕ ФОТО */
-  background-size: cover;
-  background-position: center;
-  opacity: 0.1; /* <-- ГЛАВНАЯ МАГИЯ: делаем фон очень бледным */
-  z-index: 1;
-}
+  .chaos-world { background: var(--brand-dark); color: #fff; }
+  .chaos-world h2 { color: #fff; }
+  .chaos-world p { color: rgba(255,255,255,0.8); }
 
-.story-content-panel {
-  position: relative;
-  z-index: 2;
-  background-color: #fff;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-  border: 1px solid #fff;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+  .curated-world { background: #fff; color: var(--text-dark); }
+  .curated-world h2 { color: var(--brand-dark); }
+  .curated-world p { color: var(--text-light); }
 
-.story-header {
-  text-align: center;
-  margin: 0 auto 3.5rem auto;
-}
-
-.story-title {
-  font-family: var(--font-serif);
-  font-size: 3rem;
-  font-weight: 400;
-  color: var(--brand-dark);
-  margin: 0 0 1.5rem 0;
-}
-
-.story-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.principles-grid {
+  /* --- БЛОК 2: НАШ ПОДХОД --- */
+  .approach-section { padding: 6rem 0; background: var(--background-light); }
+.approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.approach-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); }
+.approach-text p:first-of-type { margin-bottom: 1rem; }
+  
+.approach-images {
   display: grid;
+  /* Создаем холст из 3х колонок и 2х рядов */
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+.approach-images img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.principle-item {
-  text-align: center;
+.detail-img-2 {
+  grid-column: 1 / 2; 
+  grid-row: 1 / 3;     
+}
+.detail-img-4 {
+  grid-column: 2 / 3; 
+  grid-row: 1 / 2;    
+}
+.detail-img-3 {
+  grid-column: 2 / 4; 
+  grid-row: 2 / 3;    
+}
+.detail-img-1 {
+  grid-column: 3 / 4; 
+  grid-row: 1 / 2;    
 }
 
-.principle-icon {
-  font-size: 2.5rem;
-  color: var(--brand-dark);
-  margin-bottom: 1.5rem;
-}
 
-.principle-item h3 {
+  /* --- БЛОК 3: ДОРОЖНАЯ КАРТА --- */
+  .roadmap-section { padding: 6rem 0; }
+.roadmap-section .section-title { margin-bottom: 4rem; }
+.roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.roadmap-item {
+  position: relative; /* Нужно для позиционирования цифры */
+  padding: 2rem;
+  background: #fdfdfd;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  text-align: left;
+  overflow: hidden; /* Чтобы цифра не вылезала */
+}
+.roadmap-number-bg {
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  font-size: 6rem; /* Большая цифра */
+  font-weight: 800;
+  color: #f0f0f0; /* Полупрозрачный цвет */
+  z-index: 1;
+  user-select: none; /* Чтобы нельзя было выделить */
+}
+.roadmap-item h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  margin: 0 0 0.75rem 0;
-  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  position: relative; z-index: 2; /* Текст поверх цифры */
 }
-
-.principle-item p {
-  line-height: 1.7;
+.roadmap-item p {
   color: var(--text-light);
-  margin: 0;
-  font-size: 0.95rem; /* Сделаем текст принципов чуть компактнее */
+  line-height: 1.6;
+  position: relative; z-index: 2; /* Текст поверх цифры */
 }
 
-  /* --- СЕКЦИЯ 3: PROCESS --- */
-  .process-section { padding: 6rem 0; }
-  .process-section .section-title { margin-bottom: 3.5rem; }
-  .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .process-step { text-align: center; }
-  .process-icon { font-size: 3rem; color: var(--brand-dark); margin-bottom: 1rem; }
-  .process-step h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
-  .process-step p { color: var(--text-light); line-height: 1.6; margin: 0; }
-  
-  /* --- СЕКЦИЯ 4: FOUNDER --- */
-  .founder-section {
-    padding: 6rem 0;
-    background: var(--background-light);
-}
-.founder-container {
-    max-width: 800px; /* Делаем контейнер уже для фокуса на тексте */
-    text-align: center;
-}
+  /* --- БЛОК 4: ОСНОВАТЕЛЬ --- */
+  .founder-section { padding: 6rem 0; background: var(--background-light); }
+.founder-content { text-align: center; max-width: 700px; }
 .founder-quote {
-    font-family: var(--font-serif);
-    font-size: 2rem; /* Крупная, красивая цитата */
-    line-height: 1.6;
-    font-style: italic;
-    color: var(--text-dark);
-    margin: 0 0 2.5rem 0;
-    border: none;
-    padding: 0;
+  font-family: var(--font-serif);
+  font-size: 1.8rem; /* Сделаем чуть крупнее */
+  font-style: italic;
+  line-height: 1.7; /* Увеличим межстрочный интервал */
+  margin: 0 0 2.5rem 0;
+  padding: 0;
+  border: none;
 }
 .founder-attribution {
-    display: inline-flex; /* Чтобы блок был по центру */
-    align-items: center;
-    gap: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
 }
 .founder-avatar {
-    width: 60px; /* Фото-аватар поменьше */
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 60px; /* Сделаем чуть крупнее, как было */
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .founder-info {
-    text-align: left;
+  text-align: left; /* <-- 1. Выравниваем текст по левому краю */
 }
 .founder-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0;
+  font-size: 1.1rem; /* <-- 2. Возвращаем отдельный стиль для имени */
+  font-weight: 700;
+  margin: 0 0 0.25rem 0; /* <-- 3. Добавляем небольшой отступ снизу */
 }
 .founder-title {
-    font-size: 1rem;
-    color: var(--text-light);
-    margin: 0;
+  font-size: 1rem; /* <-- 4. Возвращаем отдельный стиль для "должности" */
+  color: var(--text-light);
+  margin: 0;
 }
-
-  
-  /* --- СЕКЦИЯ 5: CTA --- */
-  .cta-section { position: relative; padding: 7rem 0; text-align: center; color: #fff; background-size: cover; background-position: center; }
-  .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1; }
-  .cta-section .content { position: relative; z-index: 2; max-width: 650px; }
-  .cta-section .section-title { color: #fff; }
-  .cta-section .section-intro { color: rgba(255,255,255,0.9); margin-bottom: 2.5rem; }
+.founder-cta {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid #ddd;
+}
+.founder-cta p { font-size: 1.1rem; margin-bottom: 1.5rem; }
   .cta-button {
-    display: inline-block;
-    background: #fff;
-    color: var(--brand-dark);
-    padding: 0.9rem 2.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: all 0.2s ease;
+    display: inline-block; background: var(--brand-dark); color: #fff; padding: 0.8rem 2rem;
+    border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.2s ease;
   }
-  .cta-button:hover { background: #f0f0f0; transform: scale(1.05); }
+  .cta-button:hover { background: #1a2523; }
 
   /* --- АДАПТАЦИЯ --- */
   @media (max-width: 900px) {
-    .container-grid { grid-template-columns: 1fr; }
-    .manifesto-image-wrapper { grid-row: 1; /* Картинка будет сверху на мобильных */ margin-bottom: 2rem; }
-    .container-grid.founder { display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .founder-image-wrapper { margin-bottom: 1.5rem; }
-    .principles-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  }
-
-  @media (max-width: 768px) {
-    section { padding: 4rem 0; }
-    .hook-title { font-size: 2.2rem; }
-    .section-title { font-size: 1.8rem; }
-    .process-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .founder-quote {
-        font-size: 1.5rem;
-    }
-    .story-hero {
-      padding: 4rem 1.5rem;
-    }
-    .story-content-panel {
-      padding: 2rem;
-    }
-    .story-title {
-      font-size: 2.5rem;
-    }
+    .two-worlds-section, .approach-grid { grid-template-columns: 1fr; }
+    .chaos-world { order: 1; }
+    .curated-world { order: 2; }
+    .approach-images { order: 1; margin-bottom: 2rem; }
+    .approach-text { order: 2; }
+    .roadmap-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   }
 </style>

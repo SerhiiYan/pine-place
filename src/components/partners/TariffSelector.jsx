@@ -3,17 +3,22 @@ import React, { useState } from 'react';
 import { MdCheckCircleOutline } from 'react-icons/md';
 import TARIFF_DATA from '@/data/tariffs.json';
 
-function TariffCard({ tariff, billingCycle }) {
+function TariffCard({ tariff, activePlan }) { // <-- 1. Меняем проп
   const isPaid = tariff.name !== 'Free';
   let pricePerMonth = 0;
   let billingInfoText = tariff.slogan;
 
   if (isPaid) {
-    const planDetails = billingCycle === 'yearly' ? tariff.plans['12'] : tariff.plans['3'];
+    // 2. Безопасно получаем детали плана по активному ключу
+    const planDetails = tariff.plans[activePlan];
+    
     pricePerMonth = planDetails.pricePerMonth;
-    billingInfoText = billingCycle === 'yearly'
-      ? `Оплата раз в год — ${tariff.plans['12'].price} BYN`
-      : `Оплата раз в 3 месяца — ${tariff.plans['3'].price} BYN`;
+    
+    // 3. Формируем текст в зависимости от срока
+    let termText = `${activePlan} месяца`;
+    if (activePlan === '12') termText = 'год';
+
+    billingInfoText = `Оплата раз в ${termText} — ${planDetails.price} BYN`;
   }
 
   return (
@@ -57,12 +62,20 @@ function TariffCard({ tariff, billingCycle }) {
 }
 
 export default function TariffSelector() {
-  const [billingCycle, setBillingCycle] = useState('yearly');
+  const [activePlan, setActivePlan] = useState('12');
 
   return (
     <>
       <style>{`
         .tariff-widget { text-align: center; }
+        .tariff-widget-container {
+          background-color: #fcfcfc; /* Очень легкий фон, почти белый */
+          border-radius: 16px; /* Больше, чем у карточек внутри */
+          padding: 2.5rem; /* Внутренние отступы */
+          border: 1px solid #f0f0f0;
+          /* Можно добавить легкую тень для эффекта "приподнятости" */
+          box-shadow: 0 10px 40px rgba(44, 62, 58, 0.08);
+        }
         .billing-toggle { display: inline-flex; background: #f0f0f0; border-radius: 99px; padding: 6px; margin-bottom: 2.5rem; }
         .toggle-btn { padding: 0.75rem 1.5rem; border: none; background: transparent; border-radius: 99px; font-weight: 600; cursor: pointer; transition: all 0.25s ease-out; color: #6c757d; }
         .toggle-btn.active { background: #fff; color: #2C3E3A; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
@@ -97,7 +110,7 @@ export default function TariffSelector() {
         .price { margin-bottom: 0.25rem; }
         .price-amount { font-size: 2.5rem; font-weight: 700; }
         .price-period { color: #6c757d; }
-        .billing-info { font-size: 0.9rem; color: #6c757d; margin: 0 0 1.5rem 0; min-height: 2.7em; }
+        .billing-info { font-size: 0.9rem; color: #7d6c6cff; margin: 0 0 1.5rem 0; min-height: 2.7em; }
         .features-list { list-style: none; padding: 1.5rem 0 0 0; margin: 0; border-top: 1px solid #f0f0f0; flex-grow: 1; display: flex; flex-direction: column; gap: 1rem; }
         .feature-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; }
         .feature-icon { color: #2C3E3A; font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
@@ -117,17 +130,27 @@ export default function TariffSelector() {
         }
         .cta-button:hover { background-color: #2C3E3A; color: #fff; border-color: #2C3E3A; }
 
-        @media(max-width: 900px) { .tariffs-grid { grid-template-columns: 1fr; } }
+        @media(max-width: 900px) {
+          .tariffs-grid { grid-template-columns: 1fr; }
+          .tariff-widget-container {
+            padding: 1.5rem; /* Уменьшаем отступы на мобильных */
+          }
+        }
       `}</style>
-      <div className="tariff-widget">
-        <div className="billing-toggle">
-          <button className={`toggle-btn ${billingCycle === 'monthly' ? 'active' : ''}`} onClick={() => setBillingCycle('monthly')}>Каждые 3 месяца</button>
-          <button className={`toggle-btn ${billingCycle === 'yearly' ? 'active' : ''}`} onClick={() => setBillingCycle('yearly')}>Раз в год <span className="discount-badge">Выгодно</span></button>
-        </div>
+      <div className="tariff-widget-container"> 
+        <div className="tariff-widget">
+          <div className="billing-toggle">
+            <button className={`toggle-btn ${activePlan === '3' ? 'active' : ''}`} onClick={() => setActivePlan('3')}>3 месяца</button>
+            <button className={`toggle-btn ${activePlan === '6' ? 'active' : ''}`} onClick={() => setActivePlan('6')}>6 месяцев</button>
+            <button className={`toggle-btn ${activePlan === '12' ? 'active' : ''}`} onClick={() => setActivePlan('12')}>
+              1 год <span className="discount-badge">Выгодно</span>
+            </button>
+          </div>
         <div className="tariffs-grid">
-          <TariffCard tariff={TARIFF_DATA.free} />
-          <TariffCard tariff={TARIFF_DATA.basic} billingCycle={billingCycle} />
-          <TariffCard tariff={TARIFF_DATA.premium} billingCycle={billingCycle} />
+          <TariffCard tariff={TARIFF_DATA.free} activePlan={activePlan} />
+          <TariffCard tariff={TARIFF_DATA.basic} activePlan={activePlan} />
+          <TariffCard tariff={TARIFF_DATA.premium} activePlan={activePlan} />
+        </div>
         </div>
       </div>
     </>

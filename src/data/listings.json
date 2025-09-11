@@ -54,6 +54,7 @@
     "sleeps": 2,
     "bedrooms": 1,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "wifi", "terrace", "grill", "firezone"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "firezone"]
@@ -170,6 +171,7 @@
     "sleeps": 2,
     "bedrooms": 1,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "wifi", "terrace", "grill", "firezone"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "firezone"]
@@ -286,6 +288,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -402,6 +405,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -518,6 +522,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -634,6 +639,7 @@
     "sleeps": 2,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -750,6 +756,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -866,6 +873,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -982,6 +990,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -1098,6 +1107,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -1214,6 +1224,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -1330,6 +1341,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -1446,6 +1458,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -1562,6 +1575,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -1678,6 +1692,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]
@@ -1794,6 +1809,7 @@
     "sleeps": 4,
     "bedrooms": 2,
     "bathrooms": 1,
+    "tags": ["dlya-dvoih", "romanticheskiy-otdyh", "u-vody"],
     "amenities": {
     "popular": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill"],
     "all": ["hottub", "fireplace", "lakeview", "wifi", "terrace", "grill", "kitchen", "parking", "pets"]

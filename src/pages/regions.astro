@@ -90,11 +90,12 @@ import transliterate from '@/utils/slugify.js';
     }
 
     regionButtons.forEach(button => {
-      // Обновление по наведению для десктопа
-      button.addEventListener('mouseenter', () => updateShowcase(button));
-      // Обновление по клику для мобильных и как основной экшен
+      // 1. Убираем 'mouseenter'. Вся логика теперь будет по клику.
+        
+      // 2. Меняем действие по клику.
+      // Вместо перехода по ссылке, мы теперь просто обновляем правую панель.
       button.addEventListener('click', () => {
-        window.location.href = showcaseLink.href;
+        updateShowcase(button);
       });
     });
   });
